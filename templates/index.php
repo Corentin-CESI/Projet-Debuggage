@@ -17,7 +17,7 @@ try {
         '/api/post',
     ));
 
-    if($request_uri == "/") {
+    if($request_uri == "/php-toolbox-projet/") {
         $request_uri = '/home';
     }
 
