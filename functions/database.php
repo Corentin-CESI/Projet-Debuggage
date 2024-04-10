@@ -5,7 +5,7 @@
  *
  * @param string mysql query
  *
- * return mixed
+ * @return mixed result request CORRECTION
  */
 function run_query(string $query) {
     $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
@@ -26,14 +26,15 @@ function run_query(string $query) {
  * @param $table table name
  * @param $datas array the data to be inserted
  *
- * return bolean
+ * @return bolean result of the request CORRECTION
  */
 function insert(string $table, array $datas) {
+    $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT); //CORRECTION
     $dataColumn = null;
     $dataValues = null;
-    foreach($datas as $column => $values) {
+    foreach($datas as $column => $value) {
         $dataColumn .= $column . ",";
-        $dataValues .= "'" . $values . "',";
+        $dataValues .= "'" . mysqli_real_escape_string($connection, $value) . "',";
     }
 
     $dataColumn = rtrim($dataColumn,',');
@@ -45,17 +46,20 @@ function insert(string $table, array $datas) {
 }
 
 /**
- * @param string table name
- * @param string column
- * @param array conditions
+ * For request SELECT
+ * 
+ * @param string $table name
+ * @param string $column
+ * @param array $conditions
  *
- * return array if has some data, false otherwise
+ * @return array if has some data, false otherwise
  */
-function select(string $table, string $column = null, $conditions = array()) {
+function select(string $table, string $column = '*', $conditions = array()) {
+    $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);    
     if(empty($column)) {
         $column = "*";
     }
-
+    
     $query = "SELECT {$column} FROM {$table}";
     if(!empty($conditions)) {
         $query .= " WHERE {$conditions[0]} {$conditions[1]} '{$conditions[2]}'";
