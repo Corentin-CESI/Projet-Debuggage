@@ -6,12 +6,12 @@ template('header', array(
 
     <!-- ======= CESAR ======= -->
     <section id="homepage" class="homepage">
-        <div class="container">
-            <div class="section-title">
+        <div class="container-fluid row">
+            <div class="section-title col-11 mx-auto">
                 <h2>Coder ou décoder un texte à l'aide du Code César </h2>
             </div>
 
-            <div class="row">
+            <div class="col-11 mx-auto">
                 <figure class="bg-light rounded p-3">
                     <blockquote cite="https://www.huxley.net/bnw/four.html">
                         <p>
@@ -26,75 +26,77 @@ template('header', array(
                 </figure>
             </div>
 
-            <div class="row justify-content-around">
-                <!-- A Chiffrer -->
-                <fieldset class="col-5 mt-4">
-                    <legend>Chiffrer</legend>
-                    <form action="" method="POST" name="cesar">
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <label for="clear">Le texte à chiffrer</label>
-                                <div class="input-group">
-                                    <textarea id="clear" name="clear" rows="10" class="form-control" required></textarea>
+            <div class="col-11 mx-auto">
+                <div class="container-fluid row justify-content-around">
+                    <!-- A Chiffrer -->
+                    <fieldset class="col-5 mt-4 pt-2 pb-3">
+                        <legend>Chiffrer</legend>
+                        <form action="" method="POST" name="cesar">
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="clear">Le texte à chiffrer</label>
+                                    <div class="input-group">
+                                        <textarea id="clear" name="clear" rows="10" class="form-control" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <label for="key">Clé</label>
+                                    <div class="input-group">
+                                        <input id="key" name="key" type="number" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <label for="result">Résultat</label>
+                                    <p id="result"></p>
                                 </div>
                             </div>
 
-                            <div class="col-12 mt-4">
-                                <label for="key">Clé</label>
-                                <div class="input-group">
-                                    <input id="key" name="key" type="number" class="form-control">
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-block btn btn-primary">Chiffrer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                    <!-- A Chiffrer END -->
+
+
+                    <!-- A Déchiffrer -->
+                    <fieldset class="col-5 mt-4 pt-2 pb-3">
+                        <legend>Déchiffrer</legend>
+                        <form action="" method="POST" name="cesar">
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <label for="result">Le texte à déchiffrer</label>
+                                    <div class="input-group">
+                                        <textarea id="result" name="result" rows="10" class="form-control" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <label for="key">Clé</label>
+                                    <div class="input-group">
+                                        <input id="key" name="key" type="number" class="form-control" >
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <label for="clear">Résultat</label>
+                                    <p id="clear"></p>
                                 </div>
                             </div>
 
-                            <div class="col-12 mt-4">
-                                <label for="result">Résultat</label>
-                                <p id="result"></p>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <button type="submit" class="btn-block btn btn-primary">Chiffrer</button>
-                            </div>
-                        </div>
-                    </form>
-                </fieldset>
-                <!-- A Chiffrer END -->
-
-
-                <!-- A Déchiffrer -->
-                <fieldset class="col-5 mt-4  ms-md-auto">
-                    <legend>Déchiffrer</legend>
-                    <form action="" method="POST" name="cesar">
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <label for="result">Le texte à déchiffrer</label>
-                                <div class="input-group">
-                                    <textarea id="result" name="result" rows="10" class="form-control" required></textarea>
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn-block btn btn-primary">Déchiffrer</button>
                                 </div>
                             </div>
-
-                            <div class="col-12 mt-4">
-                                <label for="key">Clé</label>
-                                <div class="input-group">
-                                    <input id="key" name="key" type="number" class="form-control" >
-                                </div>
-                            </div>
-
-                            <div class="col-12 mt-4">
-                                <label for="clear">Résultat</label>
-                                <p id="clear"></p>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-12">
-                                <button type="submit" class="btn-block btn btn-primary">Déchiffrer</button>
-                            </div>
-                        </div>
-                    </form>
-                </fieldset>
-                <!-- A Déchiffrer END -->
+                        </form>
+                    </fieldset>
+                    <!-- A Déchiffrer END -->
+                </div>
             </div>
         </div>
 </section>
