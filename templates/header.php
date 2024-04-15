@@ -30,17 +30,16 @@
 <!-- ======= Mobile nav toggle button ======= -->
 <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
-<!-- ======= Header ======= -->
+<!-- Header -->
 <header id="header">
     <div class="d-flex flex-column">
-
-        <div class="menu-header mt-3">
+        <div class="menu-header m-4">
             <h1 class="text-light"><a href="<?= home_url(); ?>">MY TOOLBOX</a></h1>
         </div>
 
+        <!-- Navbar -->
         <nav id="navbar" class="nav-menu navbar">
-
-            <ul>
+            <ul class="mx-auto">
                 <li><a href="<?= home_url(); ?>" class="nav-link scrollto <?= is_current_url('') ? 'active' : '' ?>"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
                 <li><a href="<?= home_url(); ?>/cesar" class="nav-link scrollto <?= is_current_url('/cesar') ? 'active' : '' ?>"><i class="bx bx-note"></i> <span>Code césar</span></a></li>
                 <li><a href="<?= home_url(); ?>/euros-dollars" class="nav-link scrollto <?= is_current_url('/euros-dollars') ? 'active' : '' ?>"><i class='bx bx-coin'></i> <span>Euros en dollars</span></a></li>
@@ -49,11 +48,12 @@
                 <li><a href="<?= home_url(); ?>/regle-de-trois" class="nav-link scrollto <?= is_current_url('/regle-de-trois') ? 'active' : '' ?>"><i class='bx bx-collapse-horizontal'></i> <span>Règle de trois</span></a></li>
                 <li><a href="<?= home_url(); ?>/admin" class="nav-link scrollto <?= is_current_url('/admin') ? 'active' : '' ?>"><i class='bx bx-stats'></i> <span>Espace gestion</span></a></li>
             </ul>
-
-        </nav><!-- .nav-menu -->
+        </nav>
+        <!-- Navbar END -->
     </div>
     <script>
         console.log("<?= get_server('request_uri'); ?>");
     </script>
-</header><!-- End Header -->
+</header>
+<!-- Header END  -->
 <main id="main">
