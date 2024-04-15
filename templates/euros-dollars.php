@@ -111,7 +111,7 @@ template('header', array(
                     let inputName = Object.keys(result.data)[0];
 
                     event.t
-                })
+                });
             }
         });
     </script>

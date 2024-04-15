@@ -68,3 +68,32 @@ function remove_slash($string, $positions = 'rl') {
 
     return $trimed_string;
 }
+
+function test($request_uri){
+   // $request_uri = get_server('request_uri');
+   // $query_string = get_server('query_string');
+
+    $routes = register_route(array(
+        '/home',
+        '/cesar',
+        '/euros-dollars',
+        '/pourcentage',
+        '/decimal-hexadecimal',
+        '/regle-de-trois',
+        '/admin',
+        /* ROUTES API */
+        '/api/post',
+    ));
+    
+    
+    // if($request_uri == 'home'){
+        
+    // }
+    
+    // $requested_route = formate_route($request_uri);
+    
+    
+    if (in_array($request_uri, $routes)) {
+        template($request_uri);
+    }
+}
