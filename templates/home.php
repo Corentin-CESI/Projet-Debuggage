@@ -57,8 +57,8 @@ if (!empty($_POST)) {
 
     <!-- ======= About Section ======= -->
     <section id="homepage" class="homepage">
-        <div class="container">
-            <div class="section-title">
+        <div class="container-fluid row">
+            <div class="section-title col-11 mx-auto">
                 <h2>La boite à outils </h2>
                 <p>La boite à outils est un site accessible 24h/24 et 7j/7 qui vous permet de réaliser un bon nombre de calculs ou transformations nécessaires au quotidien</p>
 
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
 
             <?php getAlert($messages); ?>
 
-            <div class="row">
+            <div class="col-11 mx-auto">
                 <div class="col-lg-12 pt-4 pt-lg-0 content">
                     <h3>Il vous manque une fonctionnalité ?</h3>
                     <p class="fst-italic">
@@ -75,48 +75,43 @@ if (!empty($_POST)) {
                     </p>
                     <form id="contact-form" name="contact-form" method="POST">
                         <!--Grid row-->
-                        <div class="row">
-                            <div class="col-md-6">
+                        <div class="col-11 container-fluid row g-3 mx-auto">
+                            <div class="col-6">
                                 <div class="md-form mb-0">
                                     <label for="name" class="">Votre nom</label>
                                     <input type="text" id="name" name="name" class="form-control">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-6">
                                 <div class="md-form mb-0">
                                     <label for="email" class="">Votre email (pour vous répondre)</label>
                                     <input type="text" id="email" name="email" class="form-control">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
+
+                            <div class="col-12">
                                 <div class="md-form mb-0">
                                     <label for="subject" class="">Objet</label>
                                     <input type="text" id="subject" name="subject" class="form-control">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-12">
+
+                            <div class="col-12">
                                 <div class="md-form">
                                     <label for="message">Votre demande</label>
                                     <textarea id="message" name="message" rows="5" class="form-control md-textarea"></textarea>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="row mt-4">
-                            <div class="col-md-6">
+                            <div class="col-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                     <label class="form-check-label" for="flexCheckDefault">
                                         J'accepte que mes données soient utilisées dans le cadre de demande de fonctionnalité
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="text-center text-md-start">
+                            <div class="col-6">
+                                <div class="text-center text-md-end">
                                     <button type="submit" class="btn  btn-block btn-primary">Envoyer</button>
                                 </div>
                             </div>
