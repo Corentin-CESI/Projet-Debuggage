@@ -6,19 +6,18 @@ template('header', array(
 
     <!-- ======= About Section ======= -->
 <section id="homepage" class="homepage">
-    <div class="container">
+    <div class="container-fluid col-11 mx-auto">
         <div class="section-title">
             <h2>Calcul de pourcentage </h2>
             <p>La calculatrice de pourcentage vous permez de calculez facilement le pourcentage de n’importe quel chiffre avec la calculatrice de pourcentage en ligne, une calculatrice utile et simple à utiliser.</p>
         </div>
 
-        <div class="row">
-
-            <fieldset class="col-12 mt-4">
+        <div class="col-11 mx-auto">
+            <fieldset class="col-12 mt-4 ps-2 pt-2">
                 <legend>Calculer la quantité</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row mx-auto">
+                        <div class="col-3">
                             <label for="percent" aria-hidden="true" hidden>Pourcentage</label>
                             <div class="input-group">
                                 <input id="percent" name="percent" type="text" class="form-control" required value="50">
@@ -27,7 +26,7 @@ template('header', array(
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -37,8 +36,8 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="d-inline-flex align-items-center ">
-                            <span class="ver">=</span>
+                        <div class="d-inline-flex align-items-center col-1 mb-3">
+                            <span class="ver mx-auto">=</span>
                         </div>
 
                         <div class="col-3">
@@ -48,7 +47,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col">
+                        <div class="col-2 mb-3">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -56,11 +55,11 @@ template('header', array(
             </fieldset>
 
 
-            <fieldset class="col-12 mt-4">
+            <fieldset class="col-12 mt-4 ps-2 pt-2">
                 <legend>Calculer le nombre initial</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row mx-auto">
+                        <div class="col-3">
                             <label for="result" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <input id="result" name="result" type="text" class="form-control" required value="10">
@@ -68,11 +67,11 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="d-inline-flex align-items-center col mb-3">
                             <span class="ver">est le</span>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-3">
                             <label for="percent" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <input id="percent" name="percent" type="text" class="form-control" required value="10">
@@ -83,12 +82,12 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="d-inline-flex align-items-center col mb-3">
                             <span class="ver">de</span>
                         </div>
 
 
-                        <div class="col-3">
+                        <div class="col-3 mb-3">
                             <label for="of" aria-hidden="true" hidden>Résultat</label>
                             <div class="input-group">
                                 <input id="of" name="of" type="text" class="form-control" disabled>
@@ -102,11 +101,11 @@ template('header', array(
                 </form>
             </fieldset>
 
-            <fieldset class="col-12 mt-4">
+            <fieldset class="col-12 mt-4 ps-2 pt-2">
                 <legend>Calculer le pourcentage</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row mx-auto">
+                        <div class="col-3">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <input id="of" name="of" type="text" class="form-control" required>
@@ -114,11 +113,11 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="d-inline-flex align-items-center col mb-3">
                             <span class="ver">est le</span>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-3">
                             <label for="percent" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <input id="percent" name="percent" type="text" class="form-control" disabled>
@@ -129,12 +128,12 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="d-inline-flex align-items-center col mb-3">
                             <span class="ver">de</span>
                         </div>
 
 
-                        <div class="col-3">
+                        <div class="col-3 mb-3">
                             <label for="result" aria-hidden="true" hidden>Résultat</label>
                             <div class="input-group">
                                 <input id="result" name="result" type="text" class="form-control" required>
