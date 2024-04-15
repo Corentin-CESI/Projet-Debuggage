@@ -27,6 +27,7 @@ template('header', array(
             </div>
 
             <div class="row justify-content-around">
+                <!-- A Chiffrer -->
                 <fieldset class="col-5 mt-4">
                     <legend>Chiffrer</legend>
                     <form action="" method="POST" name="cesar">
@@ -58,7 +59,10 @@ template('header', array(
                         </div>
                     </form>
                 </fieldset>
+                <!-- A Chiffrer END -->
 
+
+                <!-- A Déchiffrer -->
                 <fieldset class="col-5 mt-4  ms-md-auto">
                     <legend>Déchiffrer</legend>
                     <form action="" method="POST" name="cesar">
@@ -90,6 +94,7 @@ template('header', array(
                         </div>
                     </form>
                 </fieldset>
+                <!-- A Déchiffrer END -->
             </div>
         </div>
 </section>

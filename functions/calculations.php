@@ -44,6 +44,9 @@
             if($index > 25){
                 $index = $index - 26;
             }
+            else if($index < 0){
+                $index = $index + 26;
+            }
             $result .= $alphabet[$index];
         }
 
