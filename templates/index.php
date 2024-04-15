@@ -20,12 +20,17 @@ try {
     if($request_uri == "/") {
         $request_uri = '/home';
     }
-
+    
     $requested_route = formate_route($request_uri);
-
+    
+    
+    
     if (in_array($requested_route, $routes)) {
         template($requested_route);
     }
+    echo get_server('request_uri');
+    
+    
 } catch (Exception $error) {
     echo $error->getMessage();
 }

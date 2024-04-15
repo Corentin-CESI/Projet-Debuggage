@@ -3,18 +3,36 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define('FUNC', 'functions');
+if (!defined('FUNC')) {
+    define('FUNC', 'functions');
+}
 
-// bdd connexion
-require_once FUNC . '/connection.php';
-
-// Other function
+// Load includer function
 require_once FUNC . '/includer.php';
-require_once FUNC . '/database.php';
-require_once FUNC . '/dumper.php';
-require_once FUNC . '/utils.php';
-require_once FUNC . '/router.php';
-require_once FUNC . '/template.php';
-require_once FUNC . '/alert.php';
-require_once FUNC . '/validation.php';
-require_once FUNC . '/calculations.php';
+
+// Charge la connexion à la base de données
+get_file('connection', FUNC);
+
+// Charge la base de données
+get_file('database', FUNC);
+
+// Charge dumper
+get_file('dumper', FUNC);
+
+// Charge fonction utilitaires
+get_file('utils', FUNC);
+
+// Charge le router
+get_file('router', FUNC);
+
+// Charge les fonction de templating
+get_file('template', FUNC);
+
+// Charge les alertes
+get_file('alert', FUNC);
+
+// Charge la validation
+get_file('validation', FUNC);
+
+// Charge la validation
+get_file('calculations', FUNC);
