@@ -6,12 +6,12 @@ template('header', array(
 
     <!-- ======= About Section ======= -->
     <section id="homepage" class="homepage">
-        <div class="container">
-            <div class="section-title">
+        <div class="container-fluid row">
+            <div class="section-title col-11 mx-auto">
                 <h2>La règle de trois</h2>
             </div>
 
-            <div class="row">
+            <div class="col-11 mx-auto">
                 <figure class="bg-light rounded p-3">
                     <blockquote cite="https://www.huxley.net/bnw/four.html">
                         <p>En mathématiques élémentaires, la règle de trois ou règle de proportionnalité ou produit en croix est une méthode mathématique permettant de déterminer une quatrième proportionnelle. Plus précisément, trois nombres a, b et c étant donnés, la règle de trois permet, à partir de l'égalité des produits en croix, de trouver le nombre d tel que (a, b) soit proportionnel à (c, d).</p>
@@ -20,60 +20,58 @@ template('header', array(
                 </figure>
             </div>
 
-            <div class="row">
-
-                <fieldset class="col-12 mt-4">
-                    <legend>Calculer X</legend>
-                    <form action="" method="POST" name="regle-de-trois">
-                        <div class="form-group row">
-                            <div class="col">
-                                <label for="a" aria-hidden="true" hidden>Nombre A</label>
-                                <div class="input-group">
-                                    <input id="a" name="a" type="text" class="form-control">
+            <div class="col-11 mx-auto">
+                <div class="container-fluid row">
+                    <fieldset class="col-11 mt-4 mx-auto">
+                        <legend>Calculer X</legend>
+                        <form action="" method="POST" name="regle-de-trois">
+                            <div class="form-group d-flex d-inline">
+                                <div class="col">
+                                    <label for="a" aria-hidden="true" hidden>Nombre A</label>
+                                    <div class="input-group">
+                                        <input id="a" name="a" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="ver"> -> </span>
+                                </div>
+                                <div class="col">
+                                    <label for="c" aria-hidden="true" hidden>Nombre C</label>
+                                    <div class="input-group">
+                                        <input id="c" name="c" type="text" class="form-control">
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="d-inline-flex align-items-center">
-                                <span class="ver"> -> </span>
-                            </div>
-                            <div class="col">
-                                <label for="c" aria-hidden="true" hidden>Nombre C</label>
-                                <div class="input-group">
-                                    <input id="c" name="c" type="text" class="form-control">
+                            <div class="form-group d-flex d-inline mt-2">
+                                <div class="col">
+                                    <label for="b" aria-hidden="true" hidden>Nombre B</label>
+                                    <div class="input-group">
+                                        <input id="b" name="b" type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-flex align-items-center">
+                                    <span class="ver"> -> </span>
+                                </div>
+                                <div class="col">
+                                    <label for="d" aria-hidden="true" hidden>Nombre D</label>
+                                    <div class="input-group">
+                                        <input id="d" name="d" type="text" class="form-control" disabled value="X">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                       <div class="form-group row">
-                            <div class="col">
-                                <label for="b" aria-hidden="true" hidden>Nombre B</label>
-                                <div class="input-group">
-                                    <input id="b" name="b" type="text" class="form-control">
+                            <div class="form-group d-flex d-inline mt-3 mb-2">
+                                <div class="col-3 mx-auto text-center">
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
                                 </div>
                             </div>
-
-                            <div class="d-inline-flex align-items-center">
-                                <span class="ver"> -> </span>
-                            </div>
-                            <div class="col">
-                                <label for="d" aria-hidden="true" hidden>Nombre D</label>
-                                <div class="input-group">
-                                    <input id="d" name="d" type="text" class="form-control" disabled value="X">
-                                </div>
-                            </div>
-                        </div>
-
-                       <div class="form-group row">
-                           <div class="col">
-                               <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
-                           </div>
-                       </div>
-                    </form>
-                </fieldset>
-
-
+                        </form>
+                    </fieldset>
                 </div>
             </div>
+        </div>
     </section>
 
 <script type="text/javascript">
