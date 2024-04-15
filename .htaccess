@@ -6,7 +6,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 
-SetEnvIf Request_URI ^/admin auth=0
+SetEnvIf Request_URI ^/admin auth=1
 
 AuthName "Merci de vous connecter"
 AuthType Basic
@@ -18,4 +18,4 @@ Satisfy any
 Allow from all
 Require valid-user
 # then, deny only if required
-Deny from env=auth
+# Deny from env=auth
