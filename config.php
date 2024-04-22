@@ -11,5 +11,5 @@ return array(
     'user' => 'root',
     'password' => '',
     'port'=> 3306,
-    'name' => 'phptoolbox'
+    'name' => 'database.sql'
 );

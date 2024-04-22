@@ -61,26 +61,44 @@
         }
     }
 
-    function convertEuroDollars($euro = null, $dollars = null){
-        $currency = $euro === null ? 'USD' : 'EUR';
-        $reverseCurrency = $currency === 'EUR' ? 'USD' : 'EUR';
-
-        $url = 'https://open.er-api.com/v6/latest/' . $currency;
-
+    function convertCurrency($amount, $fromCurrency, $toCurrency) {
+        // $url = 'https://open.er-api.com/v6/latest/USD';
+    
         $data = file_get_contents($url);
         $data = json_decode($data, true);
-        $rate = $data['rates'][$reverseCurrency];
-
-        if($euro === null){
-            $euro = $dollars * $rate;
-            return [
-                'EUR' => $euro,
-            ];
-        }
-        if($dollars === null){
-            $dollars = $euro * $rate;
-            return [
-                'USD' => $dollars,
-            ];
-        }
+        $rateFrom = $data['rates'][$fromCurrency];
+        $rateTo = $data['rates'][$toCurrency];
+    
+        // Convertir le montant de la devise source en euros
+        $amountInEUR = $amount / $rateFrom;
+    
+        // Convertir le montant en euros dans la devise cible
+        $convertedAmount = $amountInEUR * $rateTo;
+    
+        return $convertedAmount;
     }
+    
+    
+    // function convertEuroDollars($euro = null, $dollars = null){
+    //     $currency = $euro === null ? 'USD' : 'EUR' ;
+    //     $reverseCurrency = $currency === 'EUR' ? 'USD' : 'EUR';
+
+    //     $url = 'https://open.er-api.com/v6/latest/' . $currency;
+
+    //     $data = file_get_contents($url);
+    //     $data = json_decode($data, true);
+    //     $rate = $data['rates'][$reverseCurrency];
+
+    //     if($euro === null){
+    //         $euro = $dollars * $rate;
+    //         return [
+    //             'EUR' => $euro,
+    //         ];
+    //     }
+    //     if($dollars === null){
+    //         $dollars = $euro * $rate;
+    //         return [
+    //             'USD' => $dollars,
+    //         ];
+    //     }
+    // }

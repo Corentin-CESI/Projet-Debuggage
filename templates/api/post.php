@@ -90,27 +90,57 @@ switch ($body->form){
         ];
         echo json_encode($data);
         break;
-    case 'euros-dollars':
 
-        $EUR = null;
-        $USD = null;
-        if(property_exists($body, 'EUR')){
-            $EUR = $body->EUR;
-        }
-        if(property_exists($body, 'USD')){
-            $USD = $body->USD;
-        }
 
-        $result = convertEuroDollars($EUR, $USD);
+        case 'convert-currency':
 
-        $data = [
-            'response' => 'success',
-            'message' => 'Calcul réussi',
-            'data' => $result
-        ];
-        echo json_encode($data);
-        break;
-}
+            $amount = null;
+            $fromCurrency = null;
+            $toCurrency = null;
+        
+            if (property_exists($body, 'amount')) {
+                $amount = $body->amount;
+            }
+            if (property_exists($body, 'fromCurrency')) {
+                $fromCurrency = $body->fromCurrency;
+            }
+            if (property_exists($body, 'toCurrency')) {
+                $toCurrency = $body->toCurrency;
+            }
+        
+            // Appel de la fonction de conversion avec les paramètres fournis
+            $result = convertCurrency($amount, $fromCurrency, $toCurrency);
+        
+            $data = [
+                'response' => 'success',
+                'message' => 'Conversion réussie',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+        }      
+//     case 'euros-dollars':
+
+//         $EUR = null;
+//         $USD = null;
+        
+//         if(property_exists($body, 'EUR')){
+//             $EUR = $body->EUR;
+//         }
+//         if(property_exists($body, 'USD')){
+//             $USD = $body->USD;
+//         }
+
+//         $result = convertEuroDollars($EUR, $USD);
+
+//         $data = [
+//             'response' => 'success',
+//             'message' => 'Calcul réussi',
+//             'data' => $result
+//         ];
+//         echo json_encode($data);
+//         break;
+// }
 
 logSubmitToDatabase($body, $result);
 

@@ -4,118 +4,119 @@ template('header', array(
 ));
 ?>
 
-    <!-- ======= About Section ======= -->
-    <section id="homepage" class="homepage">
-        <div class="container-fluid row">
-            <div class="section-title col-11 mx-auto">
-                <h2>Convertisseur de devise</h2>
-            </div>
+<!-- ======= About Section ======= -->
+<section id="homepage" class="homepage">
+    <div class="container-fluid row">
+        <div class="section-title col-11 mx-auto">
+            <h2>Convertisseur de devise</h2>
+        </div>
 
-            <div class="col-11 mx-auto">
-                <div class="container-fluid row">
-                    <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
-                        <legend>Euro vers dollar américain</legend>
-                        <form action="" method="post" name="euros-dollars">
-                            <div class="form-group row">
-                                <div class="col-5">
-                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
-                                    <div class="input-group">
-                                        <input id="EUR" name="EUR" type="text" class="form-control" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">€</div>
-                                        </div>
+        <div class="col-11 mx-auto">
+            <div class="container-fluid row">
+                <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
+                    <legend>Euro vers dollar américain</legend>
+                    <form action="" method="post" name="convert-currency" id="convert-currency-form">
+                        <div class="form-group row">
+                            <div class="col-5">
+                                <label for="amount" aria-hidden="true" hidden>Montant</label>
+                                <div class="input-group">
+                                    <input id="amount" name="amount" type="text" class="form-control" required>
+                                    <div class="input-group-append">
+                                        
                                     </div>
-                                </div>
-
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">vaut actuellement</span>
-                                </div>
-
-                                <div class="col-5">
-                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
-                                    <div class="input-group">
-                                        <input id="USD" name="USD" type="text" class="form-control" disabled>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">$</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 ms-auto mt-2">
-                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
-                                </div>
-
-                                <!--https://fr.calcuworld.com/calculs-mathematiques/calculatrice-pourcentage/-->
-                            </div>
-                        </form>
-                    </fieldset>
-
-                    <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
-                        <legend>Dollar américain vers euro</legend>
-                        <form action="" method="post" name="euros-dollars">
-                            <div class="form-group row">
-                                <div class="col-5">
-                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
-                                    <div class="input-group">
-                                        <input id="USD" name="USD" type="text" class="form-control" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">$</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">vaut actuellement</span>
-                                </div>
-
-                                <div class="col-5">
-                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
-                                    <div class="input-group">
-                                        <input id="EUR" name="EUR" type="text" class="form-control" disabled>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">€</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-2 ms-auto mt-2">
-                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
                                 </div>
                             </div>
-                        </form>
-                    </fieldset>
-                </div>
+
+                            <div class="d-inline-flex align-items-center col-2">
+                            <label for="fromCurrency" aria-hidden="true" hidden>Devise source</label>
+                            <select id="fromCurrency" name="fromCurrency" class="form-control" required>
+                                    <!-- Options de devises générées dynamiquement par JavaScript -->
+                                </select>
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-5">
+                                <label for="result" aria-hidden="true" hidden>Résultat</label>
+                                <div class="input-group">
+                                    <input id="result" name="result" type="text" class="form-control" disabled>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="d-inline-flex align-items-center col-2">
+                            <label for="toCurrency" aria-hidden="true" hidden>Devise cible</label>
+                                <select id="toCurrency" name="toCurrency" class="form-control" required>
+                                    <!-- Options de devises générées dynamiquement par JavaScript -->
+                                </select>
+                            </div>
+
+                            
+                        </div>
+
+                        <div class="col-2 ms-auto mt-2">
+                            <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Convertir</button>
+                        </div>
+                    </form>
+                </fieldset>
             </div>
         </div>
-    </section>
-    <!-- End Home Section -->
+    </div>
+</section>
+<!-- End Home Section -->
 
+<?php template('footer'); ?>
 
-    <script type="text/javascript">
-        window.addEventListener('load', () => {
-        let forms = document.forms;
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const fromCurrencySelect = document.getElementById('fromCurrency');
+        const toCurrencySelect = document.getElementById('toCurrency');
 
-        for(form of forms){
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault();
+        // Récupérer les données JSON depuis l'API
+        fetch('https://open.er-api.com/v6/latest/USD')
+            .then(response => response.json())
+            .then(data => {
+                // Extraire les devises et leurs symboles
+                const currencies = Object.keys(data.rates);
 
-                const formData = new FormData(event.target).entries()
+                // Créer une option pour chaque devise et l'ajouter à la liste déroulante
+                currencies.forEach(currency => {
+                    const option = document.createElement('option');
+                    option.value = currency;
+                    option.textContent = currency;
+                    fromCurrencySelect.appendChild(option);
 
-                const response = await fetch('/api/post', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(
-                        Object.assign(Object.fromEntries(formData), {form: event.target.name})
-                    )
+                    const option2 = document.createElement('option');
+                    option2.value = currency;
+                    option2.textContent = currency;
+                    toCurrencySelect.appendChild(option2);
                 });
+            })
+            .catch(error => console.error('Erreur lors de la récupération des données :', error));
+        });
 
-                const result = await response.json();
+    const form = document.getElementById('convert-currency-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
 
-                let inputName = Object.keys(result.data)[0];
+        const formData = new FormData(event.target);
+        const amount = formData.get('amount');
+        const fromCurrency = formData.get('fromCurrency');
+        const toCurrency = formData.get('toCurrency');
 
-                event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
-            });
-        }
+        // Fetch the exchange rate from the API
+        const response = await fetch(`https://open.er-api.com/v6/latest/${fromCurrency}`);
+        const data = await response.json();
+        const exchangeRate = data.rates[toCurrency];
+
+        // Perform the conversion
+        const result = amount * exchangeRate;
+
+        // Update the input field with the result
+        document.getElementById('result').value = result.toFixed(2); // Round to 2 decimal places
     });
-    </script>
+</script>
 
-<?php template('footer');
+<?php template('footer'); ?>
