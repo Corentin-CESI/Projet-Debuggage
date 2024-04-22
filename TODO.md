@@ -12,7 +12,7 @@
  - [x] Possibilité de mettre des caractères spéciaux dans le formualaire
  - [ ] Ajout de différente devise dans la conversation EURO/DOLLARS (money)
  - [ ] Ajout de différente unité dans la conversation EURO/DOLLARS (maths)
- - [ ] Accès ADMIN (faire le .env)
+ - [x] Accès ADMIN (faire le .env)
 
 ### Visuel
  - [x] Mise à jour de la version de Bootstrap (4 --> 5)
@@ -32,7 +32,7 @@
  - [ ] Vérification W3C
 
 ## NOS Ajouts
- - [ ] CSS a réparé
+ - [x] CSS a réparé
 
 ## LA SECURITE
  - [x] "htmlspecialchar" utilisé dans le formaulaire
