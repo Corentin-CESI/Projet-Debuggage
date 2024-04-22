@@ -7,12 +7,17 @@ $messages = [];
 // Send contact form to database
 if (!empty($_POST)) {
     $submited_items = array(
-        'name' => $_POST['name'],
-        'email' => $_POST['email'],
-        'subject' => $_POST['subject'],
-        'message' => $_POST['message']
+        'name' => htmlspecialchars($_POST['name']),
+        'email' => htmlspecialchars($_POST['email']),
+        'subject' => htmlspecialchars($_POST['subject']),
+        'message' => htmlspecialchars($_POST['message'])
     );
-
+    /** 
+     * Juste au cas ou pour les `htmlspecialchars`, en soi il faut 
+     * juste pour `message` pour accepter les apostrophes notamment.
+     * On peut surement mettre une securité avec une expression 
+     * régulière comme à la ligne 23
+    */
     $validated_items = validate($submited_items, array(
         'name' => array(
             'label' => 'Name',
