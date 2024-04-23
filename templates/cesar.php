@@ -45,7 +45,7 @@
                                 <div class="col-12 mt-4">
                                     <label for="key">Clé</label>
                                     <div class="input-group">
-                                        <input id="key" name="key" type="number" class="form-control">
+                                        <input id="key" name="key" type="number" class="form-control"/>
                                     </div>
                                 </div>
 
@@ -80,7 +80,7 @@
                                 <div class="col-12 mt-4">
                                     <label for="key">Clé</label>
                                     <div class="input-group">
-                                        <input id="key" name="key" type="number" class="form-control" >
+                                        <input id="key" name="key" type="number" class="form-control"/>
                                     </div>
                                 </div>
 
