@@ -70,13 +70,11 @@ function remove_slash($string, $positions = 'rl') {
 }
 
 function test($request_uri){
-   // $request_uri = get_server('request_uri');
-   // $query_string = get_server('query_string');
-
     $routes = register_route(array(
         '/home',
         '/cesar',
         '/euros-dollars',
+        '/convert-maths', 
         '/pourcentage',
         '/decimal-hexadecimal',
         '/regle-de-trois',
@@ -84,14 +82,6 @@ function test($request_uri){
         /* ROUTES API */
         '/api/post',
     ));
-    
-    
-    // if($request_uri == 'home'){
-        
-    // }
-    
-    // $requested_route = formate_route($request_uri);
-    
     
     if (in_array($request_uri, $routes)) {
         template($request_uri);

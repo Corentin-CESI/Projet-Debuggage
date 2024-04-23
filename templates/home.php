@@ -1,58 +1,59 @@
 <?php
-template('header', array(
-    'title' => 'Boite à outils • Accueil',
-));
-
-$messages = [];
-// Send contact form to database
-if (!empty($_POST)) {
-    $submited_items = array(
-        'name' => htmlspecialchars($_POST['name']),
-        'email' => htmlspecialchars($_POST['email']),
-        'subject' => htmlspecialchars($_POST['subject']),
-        'message' => htmlspecialchars($_POST['message'])
-    );
-    /** 
-     * Juste au cas ou pour les `htmlspecialchars`, en soi il faut 
-     * juste pour `message` pour accepter les apostrophes notamment.
-     * On peut surement mettre une securité avec une expression 
-     * régulière comme à la ligne 23
-    */
-    $validated_items = validate($submited_items, array(
-        'name' => array(
-            'label' => 'Name',
-            'required' => true,
-            'sanitize' => 'string',
-            'min' => 2,
-            'regexp' => '/^[a-zA-Z0-9]+$/'
-        ),
-        'email' => array(
-            'label' => 'Email',
-            'required' => true,
-            'sanitize' => 'email',
-        ),
-        'subject' => array(
-            'label' => 'Subject',
-            'required' => true,
-            'sanitize' => 'string',
-        ),
-        'message' => array(
-            'label' => 'Message',
-            'required' => true,
-            'sanitize' => 'string',
-        )
+    /** Charge la barre latérale de navigation */   
+    template('header', array(
+        'title' => 'Boite à outils • Accueil',
     ));
 
-    $result = check_validation($validated_items);
+    $messages = [];
+    // Envoi le contact dans la BDD
+    if (!empty($_POST)) {
+        $submited_items = array(
+            'name' => htmlspecialchars($_POST['name']),
+            'email' => htmlspecialchars($_POST['email']),
+            'subject' => htmlspecialchars($_POST['subject']),
+            'message' => htmlspecialchars($_POST['message'])
+        );
+        /** 
+         * Juste au cas ou pour les `htmlspecialchars`, en soi il faut 
+         * juste pour `message` pour accepter les apostrophes notamment.
+         * On peut surement mettre une securité avec une expression 
+         * régulière comme à la ligne 28
+        */
+        $validated_items = validate($submited_items, array(
+            'name' => array(
+                'label' => 'Name',
+                'required' => true,
+                'sanitize' => 'string',
+                'min' => 2,
+                'regexp' => '/^[a-zA-Z0-9]+$/'
+            ),
+            'email' => array(
+                'label' => 'Email',
+                'required' => true,
+                'sanitize' => 'email',
+            ),
+            'subject' => array(
+                'label' => 'Subject',
+                'required' => true,
+                'sanitize' => 'string',
+            ),
+            'message' => array(
+                'label' => 'Message',
+                'required' => true,
+                'sanitize' => 'string',
+            )
+        ));
 
-    if (!is_passed($result)) {
-        $messages = $result;
-    } else {
-        if(insert('admin_messages', $result)) {
-            $messages['success'][] = 'Message envoyé !';
+        $result = check_validation($validated_items);
+
+        if (!is_passed($result)) {
+            $messages = $result;
+        } else {
+            if(insert('admin_messages', $result)) {
+                $messages['success'][] = 'Message envoyé !';
+            }
         }
     }
-}
 ?>
 
     <!-- ======= About Section ======= -->
@@ -65,7 +66,9 @@ if (!empty($_POST)) {
                 <p>Transformer 1/4 de litres en millilitres ou encore convertir des euros en dollars n'a jamais été aussi simple !</p>
             </div>
 
-            <?php getAlert($messages); ?>
+            <div class="section-title col-11 mx-auto">
+                <?php getAlert($messages); ?>
+            </div>
 
             <div class="col-11 mx-auto">
                 <div class="col-lg-12 pt-4 pt-lg-0 content">
@@ -74,7 +77,6 @@ if (!empty($_POST)) {
                         Écrivez-nous grâce au formulaire de contact et nous vous répondrons dans les plus brefs délais.
                     </p>
                     <form id="contact-form" name="contact-form" method="POST">
-                        <!--Grid row-->
                         <div class="col-11 container-fluid row g-3 mx-auto">
                             <div class="col-6">
                                 <div class="md-form mb-0">
@@ -121,7 +123,9 @@ if (!empty($_POST)) {
             </div>
 
         </div>
-    </section><!-- End Home Section -->
+    </section>
+    <!-- ============================= -->
 
-
-<?php template('footer');
+<?php 
+    /** Charge la fin de la page HTML */
+    template('footer');

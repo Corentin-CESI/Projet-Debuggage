@@ -1,10 +1,11 @@
 <?php
-template('header', array(
-    'title' => 'Boite à outils • Règle de trois',
-));
+    /** Charge la barre latérale de navigation */
+    template('header', array(
+        'title' => 'Boite à outils • Règle de trois',
+    ));
 ?>
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= REGLE DE TROIS ======= -->
     <section id="homepage" class="homepage">
         <div class="container-fluid row">
             <div class="section-title col-11 mx-auto">
@@ -73,33 +74,46 @@ template('header', array(
             </div>
         </div>
     </section>
+    <!-- ============================== -->
 
-<script type="text/javascript">
-    window.addEventListener('load', () => {
-        let forms = document.forms;
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            /** Récupère tous les FORM dans la page HTML */
+            let forms = document.forms;
 
-        for(form of forms){
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault();
+            for(form of forms){
+                form.addEventListener('submit', async (event) => {
+                    /** Permet de bloquer les actions par défaut des pages web (ex: redirection vers une 
+                     *  page lors d'une sélection de lien) 
+                     * */
+                    event.preventDefault();
 
-                const formData = new FormData(event.target).entries()
+                    /** Permet de récuper toutes les pairs de clé (Name d'un input) et sa valeur (la VALUE) */
+                    const formData = new FormData(event.target).entries()
 
-                const response = await fetch('/api/post', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(
-                        Object.assign(Object.fromEntries(formData), {form: event.target.name})
-                    )
+                    /** Renvoi un objet JSON avec dans DATA le résultat de la convertion monétaire de la forme :
+                     *              -  : {d: 4}
+                     */
+                    const response = await fetch('/api/post', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(
+                            Object.assign(Object.fromEntries(formData), {form: event.target.name})
+                        )
+                    });
+
+                    const result = await response.json();
+
+                    /** inputName prend la première colonne du résultat dans DATA (d) */
+                    let inputName = Object.keys(result.data)[0];
+
+                    /** Sélection sur le NAME de l'élément de la page HTML */
+                    event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
                 });
+            }
+        });
+    </script>
 
-                const result = await response.json();
-
-                let inputName = Object.keys(result.data)[0];
-
-                event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
-            });
-        }
-    });
-</script>
-
-<?php template('footer');
+<?php 
+    /** Charge la fin de la page HTML */
+    template('footer');

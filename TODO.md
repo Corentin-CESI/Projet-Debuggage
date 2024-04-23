@@ -29,7 +29,25 @@
     - [ ] REGLE DE TROIS
     - [ ] ADMIN
  - [ ] Vérification des librairies
- - [ ] Vérification W3C
+ - [ ] Vérification W3C (c'est chiant)
+ - [x] Commenter les templates
+    - [x] HOME
+    - [x] CESAR
+    - [x] CONVERT
+    - [x] POUCENTAGE
+    - [x] DEC/HEXA
+    - [x] REGLE DE TROIS
+    - [x] ADMIN
+ - [ ] Commenter les functions
+    - [ ] ALERT
+    - [ ] CALCULATION
+    - [ ] DATABASE
+    - [ ] DUMPER
+    - [ ] INCLUDER
+    - [ ] ROUTER
+    - [ ] TEMPLATE
+    - [ ] UTILS
+    - [ ] VALIDATION 
 
 ## NOS Ajouts
  - [x] CSS a réparé
