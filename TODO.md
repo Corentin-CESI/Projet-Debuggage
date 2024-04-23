@@ -18,6 +18,12 @@
  - [x] Mise à jour de la version de Bootstrap (4 --> 5)
  - [x] Bootstrap local
  - [ ] Retravailler le formulaire pour qu'il soit plus "user friendly" (ex: avec un temps de chargement lors de la validation du formulaire)
+    - [x] Temps de chargement
+       - [x] HOME
+       - [x] CESAR
+       - [x] CONVERT
+       - [x] POURCENTAGE
+       - [x] REGLE DE TROIS
 
 ### CODE
  - [ ] Nettoyage du code inutile
@@ -51,6 +57,9 @@
 
 ## NOS Ajouts
  - [x] CSS a réparé
+ - [ ] ~~Limitation de la clé pour le code cesar~~
+ - [x] Modification de la fonction CESAR
+    - [x] IF remplacer par des WHILE
 
 ## LA SECURITE
  - [x] "htmlspecialchar" utilisé dans le formaulaire

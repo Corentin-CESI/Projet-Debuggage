@@ -16,48 +16,40 @@
                 <div class="container-fluid row">
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Euro vers dollar américain</legend>
-                        <form action="" method="post" name="convert-currency" id="convert-currency-form">
+                        <form action="" method="post" name="euros-dollars">
                             <div class="form-group row">
                                 <div class="col-5">
-                                    <label for="amount" aria-hidden="true" hidden>Montant</label>
+                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
                                     <div class="input-group">
-                                        <input id="amount" name="amount" type="text" class="form-control" required>
+                                        <input id="EUR" name="EUR" type="text" class="form-control" required>
                                         <div class="input-group-append">
-                                            
+                                            <div class="input-group-text">€</div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="d-inline-flex align-items-center col-2">
-                                    <label for="fromCurrency" aria-hidden="true" hidden>Devise source</label>
-                                    <select id="fromCurrency" name="fromCurrency" class="form-control" required>
-                                        <!-- Options de devises générées dynamiquement par JavaScript -->
-                                    </select>
+                                    <span class="ver">vaut actuellement</span>
                                 </div>
-                            </div>
 
-                            <div class="form-group row">
                                 <div class="col-5">
-                                    <label for="result" aria-hidden="true" hidden>Résultat</label>
+                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
                                     <div class="input-group">
-                                        <input id="result" name="result" type="text" class="form-control" disabled>
-                                        
+                                        <input id="USD" name="USD" type="text" class="form-control" disabled>
+                                        <div class="input-group-append">
+                                            <div class="input-group-text">$</div>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="d-inline-flex align-items-center col-2">
-                                <label for="toCurrency" aria-hidden="true" hidden>Devise cible</label>
-                                    <select id="toCurrency" name="toCurrency" class="form-control" required>
-                                        <!-- Options de devises générées dynamiquement par JavaScript -->
-                                    </select>
+                                <div class="col-2 ms-auto mt-2">
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
                                 </div>
-                            </div>
 
-                            <div class="col-2 ms-auto mt-2">
-                                <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Convertir</button>
+                                <!--https://fr.calcuworld.com/calculs-mathematiques/calculatrice-pourcentage/-->
                             </div>
                         </form>
                     </fieldset>
+
 
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Dollar américain vers euro</legend>
