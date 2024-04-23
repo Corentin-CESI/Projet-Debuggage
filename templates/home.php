@@ -58,7 +58,7 @@
 
     <!-- ======= About Section ======= -->
     <section id="homepage" class="homepage">
-        <div class="container-fluid row">
+        <div class="container-fluid row position-relative">
             <div class="section-title col-11 mx-auto">
                 <h2>La boite à outils </h2>
                 <p>La boite à outils est un site accessible 24h/24 et 7j/7 qui vous permet de réaliser un bon nombre de calculs ou transformations nécessaires au quotidien</p>
@@ -122,9 +122,26 @@
                 </div>
             </div>
 
+            <!-- Loading Spinner -->
+            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <!-- --------------- -->
         </div>
     </section>
     <!-- ============================= -->
+
+    <script>
+        /** Attend l'activation du BUTTON d'envoi du formulaire pour afficher le 
+         *  LOADING SPINNER. Il s'enlève automatiquement lors du rechargement de
+         *  la page.
+         * */
+        document.getElementById('contact-form').addEventListener('submit', function() {
+            document.getElementById('loading').style.display = 'block';
+        }); 
+    </script>
 
 <?php 
     /** Charge la fin de la page HTML */

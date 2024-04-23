@@ -7,7 +7,7 @@
 
     <!-- ======= REGLE DE TROIS ======= -->
     <section id="homepage" class="homepage">
-        <div class="container-fluid row">
+        <div class="container-fluid row position-relative">
             <div class="section-title col-11 mx-auto">
                 <h2>La règle de trois</h2>
             </div>
@@ -72,6 +72,12 @@
                     </fieldset>
                 </div>
             </div>
+
+            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </div>
     </section>
     <!-- ============================== -->
@@ -109,8 +115,22 @@
 
                     /** Sélection sur le NAME de l'élément de la page HTML */
                     event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
+                
+                    /** Enlève le LOADING SPINNER */
+                    document.getElementById('loading').style.display = 'none';
                 });
             }
+        });
+
+        /** Attend l'activation du BUTTON d'envoi du formulaire pour afficher le 
+         *  LOADING SPINNER. 
+         * */
+        const trois = document.getElementsByName('regle-de-trois');
+
+        trois.forEach(element => {
+            element.addEventListener('submit', function() {
+                document.getElementById('loading').style.display = 'block';
+            }); 
         });
     </script>
 

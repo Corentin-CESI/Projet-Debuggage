@@ -147,8 +147,14 @@
                         </div>
                     </form>
                 </fieldset>
+            </div>
+
+            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
+        </div>
     </section>
     <!-- =========================== -->
 
@@ -188,8 +194,21 @@
                     /** Sélection sur le NAME de l'élément de la page HTML */
                     event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
 
+                    /** Enlève le LOADING SPINNER */
+                    document.getElementById('loading').style.display = 'none';
                 })
             }
+        });
+
+        /** Attend l'activation du BUTTON d'envoi du formulaire pour afficher le 
+         *  LOADING SPINNER. 
+         * */
+        const percent = document.getElementsByName('percent');
+
+        percent.forEach(element => {
+            element.addEventListener('submit', function() {
+                document.getElementById('loading').style.display = 'block';
+            }); 
         });
     </script>
 
