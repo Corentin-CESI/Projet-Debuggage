@@ -45,14 +45,11 @@
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
+
                                     </div>
                                 </div>
-                                <div class="col-2 ms-auto mt-2">
-                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
-                                </div>
-
-                                <!--https://fr.calcuworld.com/calculs-mathematiques/calculatrice-pourcentage/-->
                             </div>
+
                         </form>
                     </fieldset>
                 </div>
@@ -67,6 +64,13 @@
     </section>
     <!-- ====================== -->
 
+
+                            <div class="d-inline-flex align-items-center col-2">
+                            <label for="toCurrency" aria-hidden="true" hidden>Devise cible</label>
+                                <select id="toCurrency" name="toCurrency" class="form-control" required>
+                                    <!-- Options de devises générées dynamiquement par JavaScript -->
+                                </select>
+                            </div>
 
     <script type="text/javascript">
         window.addEventListener('load', () => {

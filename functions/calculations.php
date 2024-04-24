@@ -135,3 +135,4 @@
             'hex' => $hexadecimal,
         ];
     }
+

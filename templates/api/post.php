@@ -167,3 +167,4 @@
     logSubmitToDatabase($body, $result);
 
     exit;
+
