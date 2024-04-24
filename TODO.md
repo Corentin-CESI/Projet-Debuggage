@@ -35,6 +35,12 @@
        - [ ] DEC/HEXA
        - [ ] REGLE DE TROIS
        - [ ] ADMIN
+       - [x] HEADER
+          - [x] Suppression des librairies
+          - [x] Nettoyage du THEME.CSS
+       - [ ] FOOTER
+          - [x] ~~Suppression du MAIN.JS~~
+          - [x] Nettoyage du MAIN.JS
     - [ ] dans les FONCTIONS
        - [ ] ALERT
        - [ ] CALCULATION
@@ -77,7 +83,7 @@
     - [x] TEMPLATE
     - [x] UTILS
     - [x] VALIDATION 
-       - [ ] A vérifier l'utilité des option HASH et REMOVE de la fonction CHECK_VALIDATION
+       - [ ] A vérifier l'utilité des options HASH et REMOVE de la fonction CHECK_VALIDATION
  - [ ] Mettre tous les calculs côté BACK
    - [x] DEC/HEXA : faire les fonctions de calcul dans l'API
 
