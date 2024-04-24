@@ -103,6 +103,23 @@
         }
     }
 
+    /**  */
+    function convertCurrency($fromCurrency, $fromCurrencySelect, $toCurrencySelect){
+        /** Récupère toutes les possibilités de conversion dans la devise choisie */
+        $url = 'https://open.er-api.com/v6/latest/' . $fromCurrencySelect;
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+        /** Récupère le ratio de conversion */
+        $rate = $data['rates'][$toCurrencySelect];
+
+        $toCurrency = $fromCurrency * $rate;
+
+        return [
+            'toCurrency' => $toCurrency,
+        ];
+    }
+
     /** Conversion du DECIMAL vers le BINAIRE */
     function convertToBinary($decimal){
         $binary = decbin($decimal);

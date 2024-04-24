@@ -124,16 +124,17 @@
             break;
 
         case 'euros-dollars':
-            $EUR = null;
-            $USD = null;
-            if(property_exists($body, 'EUR')){
-                $EUR = $body->EUR;
+            if(property_exists($body, 'fromCurrency')){
+                $fromCurrency = $body->fromCurrency;
             }
-            if(property_exists($body, 'USD')){
-                $USD = $body->USD;
+            if(property_exists($body, 'fromCurrencySelect')){
+                $fromCurrencySelect = $body->fromCurrencySelect;
+            }
+            if(property_exists($body, 'toCurrencySelect')){
+                $toCurrencySelect = $body->toCurrencySelect;
             }
 
-            $result = convertEuroDollars($EUR, $USD);
+            $result = convertCurrency($fromCurrency, $fromCurrencySelect, $toCurrencySelect);
 
             $data = [
                 'response' => 'success',
@@ -142,6 +143,7 @@
             ];
             echo json_encode($data);
             break;
+            
         case 'decimal-hexadecimal':
             if(property_exists($body, 'decimal')){
                 $decimal = $body->decimal;

@@ -19,11 +19,14 @@
                         <form action="" method="post" name="euros-dollars">
                             <div class="form-group row">
                                 <div class="col-5">
-                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
+                                    <label for="fromCurrency" aria-hidden="true" hidden>Euros</label>
                                     <div class="input-group">
-                                        <input id="EUR" name="EUR" type="text" class="form-control" required>
+                                        <input id="fromCurrency" name="fromCurrency" type="text" class="form-control" required>
                                         <div class="input-group-append">
-                                            <div class="input-group-text">€</div>
+                                            <select id="fromCurrencySelect" name="fromCurrencySelect" class="form-control" required>
+                                                <option selected hidden>X</option>
+                                                <!-- Options de devises générées dynamiquement par JavaScript -->
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -33,11 +36,14 @@
                                 </div>
 
                                 <div class="col-5">
-                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
+                                    <label for="toCurrency" aria-hidden="true" hidden>Dollars</label>
                                     <div class="input-group">
-                                        <input id="USD" name="USD" type="text" class="form-control" disabled>
+                                        <input id="toCurrency" name="toCurrency" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
-                                            <div class="input-group-text">$</div>
+                                            <select id="toCurrencySelect" name="toCurrencySelect" class="form-control" required>
+                                                <option selected hidden>X</option>
+                                                <!-- Options de devises générées dynamiquement par JavaScript -->
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -46,42 +52,6 @@
                                 </div>
 
                                 <!--https://fr.calcuworld.com/calculs-mathematiques/calculatrice-pourcentage/-->
-                            </div>
-                        </form>
-                    </fieldset>
-
-
-                    <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
-                        <legend>Dollar américain vers euro</legend>
-                        <form action="" method="post" name="euros-dollars">
-                            <div class="form-group row">
-                                <div class="col-5">
-                                    <label for="USD" aria-hidden="true" hidden>Dollars</label>
-                                    <div class="input-group">
-                                        <input id="USD" name="USD" type="text" class="form-control" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">$</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">vaut actuellement</span>
-                                </div>
-
-                                <div class="col-5">
-                                    <label for="EUR" aria-hidden="true" hidden>Euros</label>
-                                    <div class="input-group">
-                                        <input id="EUR" name="EUR" type="text" class="form-control" disabled>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">€</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-2 ms-auto mt-2">
-                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
-                                </div>
                             </div>
                         </form>
                     </fieldset>
@@ -100,6 +70,42 @@
 
     <script type="text/javascript">
         window.addEventListener('load', () => {
+            const fromCurrencySelect = document.getElementById('fromCurrencySelect');
+            const toCurrencySelect = document.getElementById('toCurrencySelect');
+            
+            // Récupérer les données JSON depuis l'API
+            fetch('https://open.er-api.com/v6/latest/AED')
+                .then(response => response.json())
+                .then(data => {
+                    // Extraire les devises et leurs symboles
+                    const currencies = Object.keys(data.rates);
+
+                    // Créer une option pour chaque devise et l'ajouter à la liste déroulante
+                    currencies.forEach(currency => {
+                        /** FromCurrencySelect */
+                        const optionFromCurrency = document.createElement('option');
+                        
+                        optionFromCurrency.value = currency;
+                        optionFromCurrency.textContent = currency;
+
+                        fromCurrencySelect.appendChild(optionFromCurrency);
+
+                        /** ToCurrencySelect */
+                        const optionToCurrency = document.createElement('option');
+                        
+                        optionToCurrency.value = currency;
+                        optionToCurrency.textContent = currency;
+
+                        toCurrencySelect.appendChild(optionToCurrency);
+
+                        /** A noter : obligé de faire en 2 fois puisque l'objet ne peut être 
+                         *  attribué à un seul élément 
+                         * */
+                    });
+                })
+                .catch(error => console.error('Erreur lors de la récupération des données :', error));
+
+
             /** Récupère tous les FORM dans la page HTML */
             let forms = document.forms;
 
@@ -137,7 +143,7 @@
                 });
             }
         });
-
+        
         /** Attend l'activation du BUTTON d'envoi du formulaire pour afficher le 
          *  LOADING SPINNER. 
          * */
@@ -148,6 +154,8 @@
                 document.getElementById('loading').style.display = 'block';
             }); 
         });
+
+
     </script>
 
 <?php 
