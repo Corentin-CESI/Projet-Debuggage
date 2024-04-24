@@ -64,14 +64,6 @@
     </section>
     <!-- ====================== -->
 
-
-                            <div class="d-inline-flex align-items-center col-2">
-                            <label for="toCurrency" aria-hidden="true" hidden>Devise cible</label>
-                                <select id="toCurrency" name="toCurrency" class="form-control" required>
-                                    <!-- Options de devises générées dynamiquement par JavaScript -->
-                                </select>
-                            </div>
-
     <script type="text/javascript">
         window.addEventListener('load', () => {
             const fromCurrencySelect = document.getElementById('fromCurrencySelect');
