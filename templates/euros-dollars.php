@@ -1,50 +1,69 @@
 <?php
-template('header', array(
-    'title' => 'Boite à outils • Devise',
-));
+    /** Charge la barre latérale de navigation */
+    template('header', array(
+        'title' => 'Boite à outils • Devise',
+    ));
 ?>
 
-<!-- ======= About Section ======= -->
-<section id="homepage" class="homepage">
-    <div class="container-fluid row">
-        <div class="section-title col-11 mx-auto">
-            <h2>Convertisseur de devise</h2>
-        </div>
+    <!-- ======= DEVISE ======= -->
+    <section id="homepage" class="homepage">
+        <div class="container-fluid row position-relative">
+            <div class="section-title col-11 mx-auto">
+                <h2>Convertisseur de devise</h2>
+            </div>
 
-        <div class="col-11 mx-auto">
-            <div class="container-fluid row">
-                <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
-                    <legend>Euro vers dollar américain</legend>
-                    <form action="" method="post" name="convert-currency" id="convert-currency-form">
-                        <div class="form-group row">
-                            <div class="col-5">
-                                <label for="amount" aria-hidden="true" hidden>Montant</label>
-                                <div class="input-group">
-                                    <input id="amount" name="amount" type="text" class="form-control" required>
-                                    <div class="input-group-append">
-                                        
+            <div class="col-11 mx-auto">
+                <div class="container-fluid row">
+                    <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
+                        <legend>Euro vers dollar américain</legend>
+                        <form action="" method="post" name="euros-dollars">
+                            <div class="form-group row">
+                                <div class="col-5">
+                                    <label for="fromCurrency" aria-hidden="true" hidden>Euros</label>
+                                    <div class="input-group">
+                                        <input id="fromCurrency" name="fromCurrency" type="text" class="form-control" required>
+                                        <div class="input-group-append">
+                                            <select id="fromCurrencySelect" name="fromCurrencySelect" class="form-control" required>
+                                                <option selected hidden>X</option>
+                                                <!-- Options de devises générées dynamiquement par JavaScript -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-flex align-items-center col-2">
+                                    <span class="ver">vaut actuellement</span>
+                                </div>
+
+                                <div class="col-5">
+                                    <label for="toCurrency" aria-hidden="true" hidden>Dollars</label>
+                                    <div class="input-group">
+                                        <input id="toCurrency" name="toCurrency" type="text" class="form-control" disabled>
+                                        <div class="input-group-append">
+                                            <select id="toCurrencySelect" name="toCurrencySelect" class="form-control" required>
+                                                <option selected hidden>X</option>
+                                                <!-- Options de devises générées dynamiquement par JavaScript -->
+                                            </select>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="d-inline-flex align-items-center col-2">
-                            <label for="fromCurrency" aria-hidden="true" hidden>Devise source</label>
-                            <select id="fromCurrency" name="fromCurrency" class="form-control" required>
-                                    <!-- Options de devises générées dynamiquement par JavaScript -->
-                                </select>
-                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
 
-                            
-                        </div>
+            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====================== -->
 
-                        <div class="form-group row">
-                            <div class="col-5">
-                                <label for="result" aria-hidden="true" hidden>Résultat</label>
-                                <div class="input-group">
-                                    <input id="result" name="result" type="text" class="form-control" disabled>
-                                    
-                                </div>
-                            </div>
 
                             <div class="d-inline-flex align-items-center col-2">
                             <label for="toCurrency" aria-hidden="true" hidden>Devise cible</label>
@@ -53,70 +72,96 @@ template('header', array(
                                 </select>
                             </div>
 
-                            
-                        </div>
+    <script type="text/javascript">
+        window.addEventListener('load', () => {
+            const fromCurrencySelect = document.getElementById('fromCurrencySelect');
+            const toCurrencySelect = document.getElementById('toCurrencySelect');
+            
+            // Récupérer les données JSON depuis l'API
+            fetch('https://open.er-api.com/v6/latest/AED')
+                .then(response => response.json())
+                .then(data => {
+                    // Extraire les devises et leurs symboles
+                    const currencies = Object.keys(data.rates);
 
-                        <div class="col-2 ms-auto mt-2">
-                            <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Convertir</button>
-                        </div>
-                    </form>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Home Section -->
+                    // Créer une option pour chaque devise et l'ajouter à la liste déroulante
+                    currencies.forEach(currency => {
+                        /** FromCurrencySelect */
+                        const optionFromCurrency = document.createElement('option');
+                        
+                        optionFromCurrency.value = currency;
+                        optionFromCurrency.textContent = currency;
 
-<?php template('footer'); ?>
+                        fromCurrencySelect.appendChild(optionFromCurrency);
 
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        const fromCurrencySelect = document.getElementById('fromCurrency');
-        const toCurrencySelect = document.getElementById('toCurrency');
+                        /** ToCurrencySelect */
+                        const optionToCurrency = document.createElement('option');
+                        
+                        optionToCurrency.value = currency;
+                        optionToCurrency.textContent = currency;
 
-        // Récupérer les données JSON depuis l'API
-        fetch('https://open.er-api.com/v6/latest/USD')
-            .then(response => response.json())
-            .then(data => {
-                // Extraire les devises et leurs symboles
-                const currencies = Object.keys(data.rates);
+                        toCurrencySelect.appendChild(optionToCurrency);
 
-                // Créer une option pour chaque devise et l'ajouter à la liste déroulante
-                currencies.forEach(currency => {
-                    const option = document.createElement('option');
-                    option.value = currency;
-                    option.textContent = currency;
-                    fromCurrencySelect.appendChild(option);
+                        /** A noter : obligé de faire en 2 fois puisque l'objet ne peut être 
+                         *  attribué à un seul élément 
+                         * */
+                    });
+                })
+                .catch(error => console.error('Erreur lors de la récupération des données :', error));
 
-                    const option2 = document.createElement('option');
-                    option2.value = currency;
-                    option2.textContent = currency;
-                    toCurrencySelect.appendChild(option2);
+
+            /** Récupère tous les FORM dans la page HTML */
+            let forms = document.forms;
+
+            for(form of forms){
+                form.addEventListener('submit', async (event) => {
+                    /** Permet de bloquer les actions par défaut des pages web (ex: redirection vers une 
+                     *  page lors d'une sélection de lien) 
+                     * */
+                    event.preventDefault();
+
+                    /** Permet de récuper toutes les pairs de clé (Name d'un input) et sa valeur (la VALUE) */
+                    const formData = new FormData(event.target).entries()
+
+                    /** Renvoi un objet JSON avec dans DATA le résultat de la convertion monétaire de la forme :
+                     *              - Chiffrement : {USD: 12.89}
+                     */
+                    const response = await fetch('/api/post', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(
+                            Object.assign(Object.fromEntries(formData), {form: event.target.name})
+                        )
+                    });
+
+                    const result = await response.json();
+
+                    /** inputName prend la devise monétaire qui a été converti*/
+                    let inputName = Object.keys(result.data)[0];
+
+                    /** Sélection sur le NAME de l'élément de la page HTML */
+                    event.target.querySelector(`input[name="${inputName}"]`).value = result.data[inputName];
+               
+                    /** Enlève le LOADING SPINNER */
+                    document.getElementById('loading').style.display = 'none';
                 });
-            })
-            .catch(error => console.error('Erreur lors de la récupération des données :', error));
+            }
+        });
+        
+        /** Attend l'activation du BUTTON d'envoi du formulaire pour afficher le 
+         *  LOADING SPINNER. 
+         * */
+        const devise = document.getElementsByName('euros-dollars');
+
+        devise.forEach(element => {
+            element.addEventListener('submit', function() {
+                document.getElementById('loading').style.display = 'block';
+            }); 
         });
 
-    const form = document.getElementById('convert-currency-form');
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const amount = formData.get('amount');
-        const fromCurrency = formData.get('fromCurrency');
-        const toCurrency = formData.get('toCurrency');
+    </script>
 
-        // Fetch the exchange rate from the API
-        const response = await fetch(`https://open.er-api.com/v6/latest/${fromCurrency}`);
-        const data = await response.json();
-        const exchangeRate = data.rates[toCurrency];
-
-        // Perform the conversion
-        const result = amount * exchangeRate;
-
-        // Update the input field with the result
-        document.getElementById('result').value = result.toFixed(2); // Round to 2 decimal places
-    });
-</script>
-
-<?php template('footer'); ?>
+<?php 
+    /** Charge la fin de la page HTML */
+    template('footer');
