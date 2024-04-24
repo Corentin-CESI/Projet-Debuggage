@@ -11,12 +11,12 @@
 ?>
     <!-- ======= ADMIN ======= -->
     <section id="homepage" class="homepage">
-        <div class="container">
+        <div class="container-fluid row">
             <div class="section-title">
                 <h2>Espace adminstrateur</h2>
             </div>
 
-            <div class="row">
+            <div class="col-12">
                 <div class="col-lg-12 pt-4 pt-lg-0 content">
                     <h3>Messages reçus depuis le formulaire de contact</h3>
                 </div>
@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="row mt-4">
+            <div class="col-12 mt-4">
                 <div class="col-lg-12 pt-4 pt-lg-0 content">
                     <h3>Logs</h3>
                 </div>

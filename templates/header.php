@@ -16,14 +16,8 @@
             <link rel="stylesheet" href="<?= home_url(); ?>/assets/css/style.css">
             <link rel="stylesheet" href="<?= home_url(); ?>/assets/css/bootstrap.css">
 
-            <!-- Google Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+            <!-- Icon -->
             <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
         </head>
         <body>
             <!-- ======= Mobile nav toggle button ======= -->

@@ -7,7 +7,7 @@
 
     <!-- ======= DECIMAL HEXADECIMAL ======= -->
     <section id="homepage" class="homepage">
-        <div class="container-fluid row">
+        <div class="container-fluid row position-relative">
             <div class="section-title col-11 mx-auto">
                 <h2>Convertisseur système décimal positif en binaire </h2>
             </div>
@@ -51,10 +51,20 @@
                                         <input id="binary" name="binary" type="text" min="0" class="form-control" disabled>
                                     </div>
                                 </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn-block btn btn-primary">Convertir</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </fieldset>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
             </div>
         </div>
     </section>
@@ -65,43 +75,50 @@
         /** Récupère tous les FORM dans la page HTML */
         let forms = document.forms;
 
-        /** Récupère depuis le FORM du NAME DECIMAL-HEXADECIMAL l'élément DECIMAL */
-        let decimal = forms['decimal-hexadecimal'].elements['decimal'];
+        for(form of forms){
+            form.addEventListener('submit', async (event) => {
+                /** Permet de bloquer les actions par défaut des pages web (ex: redirection vers une 
+                 *  page lors d'une sélection de lien) 
+                 * */
+                event.preventDefault();
 
-        /** Fonction de convertion du DECIMAL vers l'HEXADECIMAL */
-        function dec2Hex(dec) {
-            return Math.abs(dec).toString(16);
+                /** Permet de récuper toutes les pairs de clé (Name d'un input) et sa valeur (la VALUE) */
+                const formData = new FormData(event.target).entries();
+
+                /** Renvoi un objet JSON avec dans DATA le résultat de la conversion de la forme :
+                 *              -  : [{hex: 'c'}, {binary: '1100'}]
+                 */
+                const response = await fetch('/api/post', {
+                    method: 'POST',
+                    header: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(
+                        Object.assign(Object.fromEntries(formData), {form: event.target.name})
+                    )
+                });
+
+                const result = await response.json();
+
+                /** inputName prend soit HEX soit BINARY */
+                let inputNameHEX = Object.keys(result.data[0])[0];
+                let inputNameBIN = Object.keys(result.data[1])[0];
+                
+                /** Sélection sur l' ID de l'élément de la page HTML */
+                event.target.querySelector(`#${inputNameHEX}`).value = result.data[0][inputNameHEX];
+                event.target.querySelector(`#${inputNameBIN}`).value = result.data[1][inputNameBIN];
+
+                /** Enlève le LOADING SPINNER */
+                document.getElementById('loading').style.display = 'none';
+            })
         }
+    });
 
-        /** Fonction de convertion du DECIMAL vers le BINAIRE */
-        function convertToBinary(x) {
-            let bin = 0;
-            let rem, i = 1, step = 1;
-            while (x !== 0) {
-                rem = x % 2;
-                console.log(
-                    `Step ${step++}: ${x}/2, Remainder = ${rem}, Quotient = ${parseInt(x/2)}`
-                );
-                x = parseInt(x / 2); //Prend l'arrondi le plus proche de l'entier
-                bin = bin + rem * i;
-                i = i * 10;
-            }
-            return bin;
-        }
+    /** Attend l'activation du BUTTON de validation du formulaire */
+    const dec = document.getElementsByName('decimal-hexadecimal');
 
-        /** Reste à l'écoute du moindre changement de type INPUT (ex: touche du clavier) */
-        decimal.addEventListener('input', () => {
-            /** Récupère depuis le FORM du NAME DECIMAL-HEXADECIMAL l'élément HEXADECIMAL */
-            let hex = forms['decimal-hexadecimal'].elements['hex'];
-
-            /** Récupère depuis le FORM du NAME DECIMAL-HEXADECIMAL l'élément BINAIRE */
-            let binary = forms['decimal-hexadecimal'].elements['binary'];
-
-
-            hex.value = dec2Hex(decimal.value);
-            binary.value = convertToBinary(decimal.value);
-        });
-
+    dec.forEach(element => {
+        element.addEventListener('submit', function() {
+            document.getElementById('loading').style.display = 'block';
+        }); 
     });
 </script>
 
