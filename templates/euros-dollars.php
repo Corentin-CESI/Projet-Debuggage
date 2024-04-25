@@ -45,11 +45,13 @@
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
-
                                     </div>
                                 </div>
-                            </div>
 
+                                <div class="col-2 ms-auto mt-2">
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block col-12">Calculer</button>
+                                </div>
+                            </div>
                         </form>
                     </fieldset>
                 </div>
