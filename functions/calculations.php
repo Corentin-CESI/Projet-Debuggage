@@ -136,3 +136,21 @@
         ];
     }
 
+    // Conversion des millilitres en litres
+    function convertVolume($L = null, $mL = null){
+    if ($L === null) {
+        $L = $mL * 1000;
+        return [
+            'L' => $L,
+        ];
+    }
+    if ($mL === null) {
+        $mL = $L / 1000;
+        return [
+            'mL' => $mL,
+        ];
+    }
+}
+
+    
+    

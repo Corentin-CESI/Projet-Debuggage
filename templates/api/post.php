@@ -161,6 +161,32 @@
             ];
             echo json_encode($data);
             break;
+
+            case 'LtomL':
+
+                $mL = null;
+                $L = null;
+            
+                if (property_exists($body, 'mL')) {
+                    $mL = $body->mL;
+                }
+            
+                if (property_exists($body, 'L')) {
+                    $L = $body->L;
+                }
+            
+                $result = convertVolume($L, $mL);
+            
+                $data = [
+                    'response' => 'success',
+                    'message' => 'Calcul réussi',
+                    'data' => $result
+                ];
+            
+                echo json_encode($data);
+            
+                break;
+            
     }
 
     /** Envoi des données dans la BDD */
