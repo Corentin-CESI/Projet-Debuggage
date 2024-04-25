@@ -24,7 +24,7 @@
                                         <input id="fromCurrency" name="fromCurrency" type="text" class="form-control" required>
                                         <div class="input-group-append">
                                             <select id="fromCurrencySelect" name="fromCurrencySelect" class="form-control" required>
-                                                <option selected hidden>X</option>
+                                                <option selected hidden>USD</option>
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
@@ -35,13 +35,13 @@
                                     <span class="ver">vaut actuellement</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-5 ">
                                     <label for="toCurrency" aria-hidden="true" hidden>Dollars</label>
                                     <div class="input-group">
                                         <input id="toCurrency" name="toCurrency" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
                                             <select id="toCurrencySelect" name="toCurrencySelect" class="form-control" required>
-                                                <option selected hidden>X</option>
+                                                <option selected hidden>EUR</option>
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
