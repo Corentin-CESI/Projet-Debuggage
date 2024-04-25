@@ -8,9 +8,14 @@
 
 ## LES Ajouts Demandés
 ### Fonctionnel
- - [ ] Envoi d'email lors d'une validation d'un formulaire
+ - [x] Envoi d'email lors d'une validation d'un formulaire
+    - [x] code dans HOME.PHP 
+       - [x] fonction *mail()*
+       - [x] fonction *htmlspecialchars_decode()*
  - [x] Possibilité de mettre des caractères spéciaux dans le formualaire
- - [ ] Ajout de différente devise dans la conversation EURO/DOLLARS (money)
+    - [x] code dans HOME.PHP
+       - [x] fonction *htmlspecialchars()*
+ - [x] Ajout de différente devise dans la conversation EURO/DOLLARS (money)
  - [ ] Ajout de différente unité dans la conversation EURO/DOLLARS (maths)
  - [x] Accès ADMIN (faire le .env)
 
@@ -27,35 +32,63 @@
 
 ### CODE
  - [ ] Nettoyage du code inutile (préciser même si il n'y a rien) ( + il faudra recheck avec le projet initial au cas où)
-    - [ ] dans les TEMPLATE
-       - [ ] HOME
-       - [ ] CESAR
-       - [ ] CONVERT
-       - [ ] POUCENTAGE
-       - [ ] DEC/HEXA
-       - [ ] REGLE DE TROIS
-       - [ ] ADMIN
+    - [x] dans les TEMPLATE
+       - [x] HOME
+          - [x] Pas de changement
+       - [x] CESAR
+          - [x] Pas de changement
+       - [x] CONVERT
+          - [x] Pas de changement
+       - [x] POUCENTAGE
+          - [x] Pas de changement
+       - [x] DEC/HEXA
+          - [x] Suppression des fonctions de conversion
+          - [x] Ajout de l'appel à l'API pour la conversion
+       - [x] REGLE DE TROIS
+          - [x] Pas de changement
+       - [x] ADMIN
+          - [x] Pas de changement
        - [x] HEADER
           - [x] Suppression des librairies
           - [x] Nettoyage du THEME.CSS
-       - [ ] FOOTER
+       - [x] FOOTER
           - [x] ~~Suppression du MAIN.JS~~
           - [x] Nettoyage du MAIN.JS
     - [ ] dans les FONCTIONS
-       - [ ] ALERT
-       - [ ] CALCULATION
-       - [ ] CONNECTION
-       - [ ] DATABASE
-       - [ ] DUMPER
-          - [ ] Suppression du fichier
-             - [ ] Suppression de son appel dans APP.PHP
+       - [x] ALERT
+          - [x] Pas de changement
+       - [x] CALCULATION
+          - [x] Suppression de la fonction *convertEuroDollars()*
+             - [x] Devenue inutile avec *convertCurrency()*
+       - [x] CONNECTION
+          - [x] Suppression de l'initialisation des variables DB_[...]
+             - [x] Ajout de l'utilisation du dossier **vendor**
+       - [x] DATABASE
+          - [x] Modification de la fonction *mysqli_connect()*
+       - [x] DUMPER
+          - [x] Suppression du fichier
+             - [x] Suppression de son appel dans APP.PHP
        - [ ] INCLUDER
-       - [ ] ROUTER
-          - [ ] Procainement : suppression de la fonction REDIRECT
-       - [ ] TEMPLATE
-       - [ ] UTILS
+          - [x] Pas de changement
+       - [x] ROUTER
+          - [x] Suppression de la fonction REDIRECT
+       - [x] TEMPLATE
+          - [x] Pas de changement
+       - [x] UTILS
+          - [x] Pas de changement
        - [ ] VALIDATION 
           - [ ] A vérifier l'utilité des option HASH et REMOVE de la fonction CHECK_VALIDATION
+    - [x] Dans l'API
+       - [x] POST
+          - [x] Modification de 'euros-dollars'
+             - [x] Amélioration des fonctionnalités pour quelles ne soient pas limitées à 'EUR' et à 'USD'
+    - [x] APP
+       - [x] Suppression de l'appel DUMPER
+    - [x] CONFIG
+       - [x] Suppression du fichier
+          - [x] Devenu inutile avec .ENV
+    - [x] INDEX
+       - [x] Pas de changement
  - [x] Vérification des librairies
     - [x] La police de Open Sans n'est utilisé que rarement donc on l'a enlevé
     - [x] Font Awesome --> Icon SAUF que ce sont celles de BOXICON qui sont utilisées
@@ -75,16 +108,16 @@
     - [x] CONNECTION
     - [x] DATABASE
     - [x] DUMPER
-       - [ ] Prochainement : suppression du fichier
+       - [x] Prochainement : suppression du fichier
     - [x] INCLUDER
        - [ ] incertitude sur la fonction get_file
     - [x] ROUTER
-       - [ ] Procainement : suppression de la fonction REDIRECT
+       - [x] Procainement : suppression de la fonction REDIRECT
     - [x] TEMPLATE
     - [x] UTILS
     - [x] VALIDATION 
        - [ ] A vérifier l'utilité des options HASH et REMOVE de la fonction CHECK_VALIDATION
- - [ ] Mettre tous les calculs côté BACK
+ - [x] Mettre tous les calculs côté BACK
    - [x] DEC/HEXA : faire les fonctions de calcul dans l'API
 
 ## NOS Ajouts

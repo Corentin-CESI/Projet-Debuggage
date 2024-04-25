@@ -51,6 +51,12 @@
         } else {
             if(insert('admin_messages', $result)) {
                 $messages['success'][] = 'Message envoyé !';
+
+                $to = 'enoratigre@gmail.com';
+                $subject = htmlspecialchars_decode($submited_items['subject']);
+                $message = htmlspecialchars_decode($submited_items['message']);
+
+                mail($to, $subject, $message);
             }
         }
     }

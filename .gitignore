@@ -1,6 +1,6 @@
-vendor
+# vendor
 /.idea/
 
-config.php
 connection.php
+config.php
 database.php

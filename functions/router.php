@@ -44,13 +44,6 @@
         return $server;
     }
 
-    /** Permet la redirection en cas d'erreur */
-    /** NON UTILISER */
-    // function redirect($url, $status_code = 303) {
-    //     header('Location: ' . home_url() . $url, true, $status_code);
-    //     die();
-    // }
-
     /** Met sous forme de tableau toutes les routes poosibles du site */
     function register_route(array $routes) {
         $route_maps = array();

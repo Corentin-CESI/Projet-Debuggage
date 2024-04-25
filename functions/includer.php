@@ -14,7 +14,7 @@ function has_file(string $file_name, string $directory = null) {
 
 /** Charge le fichier PHP après avoir vérifié s'il existait */
 /** $data NON UTILISER MAIS utile pour avoir le TITRE de l'onglet
- * pas compris pourquoi
+ *  pas compris pourquoi
  **/
 function get_file(string $file_name, string $directory = null, array $data = array()) {
     $file = has_file($file_name, $directory);
