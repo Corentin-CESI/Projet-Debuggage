@@ -1,5 +1,5 @@
 <?php
-
+    /** Permet l'insertion des données dans la table LOGS */
     function logSubmitToDatabase($body, $result = null){
         $cols = [
             'form' => $body->form,

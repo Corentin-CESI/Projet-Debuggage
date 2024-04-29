@@ -1,14 +1,16 @@
 <?php
 
-/**
- * Used to running database query
- *
- * @param string mysql query
- *
- * return mixed
- */
-function run_query(string $query) {
+/** Permet la connection à la BDD et execution de requête SQL */
+function run_query(string $query) {   
+
+    /** @ permet de supprimer tous messages d'erreur d'une expression ou d'une 
+     *  fonction. Ce permet notamment d'éviter que l'utilisateur voit les 
+     *  messages d'erreurs et de les gérer directement dans le code. Par contre, 
+     *  ça peut rendre le débogage compliqué 
+     * */ 
     $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+
+    /** Retourne le code error du dernier appel de la fonction mysqli_connect */
     if (mysqli_connect_errno()) {
         throw new Exception("Database connection failed: " . mysqli_connect_error());
     }
@@ -20,14 +22,7 @@ function run_query(string $query) {
     }
 }
 
-/**
- * Used to create an INSERT query
- *
- * @param $table table name
- * @param $datas array the data to be inserted
- *
- * return bolean
- */
+/** Permet l'insertion de données dans la BDD sous forme de JSON DATA */
 function insert(string $table, array $datas) {
     $dataColumn = null;
     $dataValues = null;
@@ -44,13 +39,7 @@ function insert(string $table, array $datas) {
     return run_query($query);
 }
 
-/**
- * @param string table name
- * @param string column
- * @param array conditions
- *
- * return array if has some data, false otherwise
- */
+/** Permet la lecture de données de la BDD en y faisant une requête */
 function select(string $table, string $column = null, $conditions = array()) {
     if(empty($column)) {
         $column = "*";
@@ -72,10 +61,3 @@ function select(string $table, string $column = null, $conditions = array()) {
     }
 }
 
-/**
- *
- */
-function find(string $table, array $conditions) {
-    $result = select($table, null, $conditions);
-    return $result[0];
-}

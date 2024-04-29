@@ -13,7 +13,12 @@
             'subject' => htmlspecialchars($_POST['subject']),
             'message' => htmlspecialchars($_POST['message'])
         );
-        
+        /** 
+         * Juste au cas ou pour les `htmlspecialchars`, en soi il faut 
+         * juste pour `message` pour accepter les apostrophes notamment.
+         * On peut surement mettre une securité avec une expression 
+         * régulière comme à la ligne 28
+        */
         $validated_items = validate($submited_items, array(
             'name' => array(
                 'label' => 'Name',

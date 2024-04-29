@@ -16,9 +16,6 @@ get_file('connection', FUNC);
 // Charge la base de données
 get_file('database', FUNC);
 
-// Charge dumper
-get_file('dumper', FUNC);
-
 // Charge fonction utilitaires
 get_file('utils', FUNC);
 
