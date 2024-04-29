@@ -11,7 +11,7 @@
  - [ ] Envoi d'email lors d'une validation d'un formulaire
  - [x] Possibilité de mettre des caractères spéciaux dans le formualaire
  - [ ] Ajout de différente devise dans la conversation EURO/DOLLARS (money)
- - [ ] Ajout de différente unité dans la conversation EURO/DOLLARS (maths)
+ - [x] Ajout de différente unité dans la conversation EURO/DOLLARS (maths)
  - [ ] Accès ADMIN (faire le .env)
 
 ### Visuel

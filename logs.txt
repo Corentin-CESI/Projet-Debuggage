@@ -1,6 +1,0 @@
-2024-04-19 13:33:41; Mon code de debug
-2024-04-19 13:33:41; Ceci est un message de débogage.
-2024-04-19 13:33:51; Mon code de debug
-2024-04-19 13:33:51; Ceci est un message de débogage.
-2024-04-19 13:33:52; Mon code de debug
-2024-04-19 13:33:52; Ceci est un message de débogage.
