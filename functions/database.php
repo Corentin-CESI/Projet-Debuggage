@@ -8,7 +8,8 @@ function run_query(string $query) {
      *  messages d'erreurs et de les gérer directement dans le code. Par contre, 
      *  ça peut rendre le débogage compliqué 
      * */ 
-    $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+    // $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+    $connection  = @mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME'], $_ENV['DB_PORT']);
 
     /** Retourne le code error du dernier appel de la fonction mysqli_connect */
     if (mysqli_connect_errno()) {

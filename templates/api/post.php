@@ -162,31 +162,199 @@
             echo json_encode($data);
             break;
 
-            case 'LtomL':
+        case 'LtomL':
 
-                $mL = null;
-                $L = null;
+            $mL = null;
+            $L = null;
+        
+            if (property_exists($body, 'mL')) {
+                $mL = $body->mL;
+            }
+        
+            if (property_exists($body, 'L')) {
+                $L = $body->L;
+            }
+        
+            $result = convertLitre($L, $mL);
+        
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+        
+            echo json_encode($data);
+        
+            break;
             
-                if (property_exists($body, 'mL')) {
-                    $mL = $body->mL;
-                }
-            
-                if (property_exists($body, 'L')) {
-                    $L = $body->L;
-                }
-            
-                $result = convertVolume($L, $mL);
-            
-                $data = [
-                    'response' => 'success',
-                    'message' => 'Calcul réussi',
-                    'data' => $result
-                ];
-            
-                echo json_encode($data);
-            
-                break;
-            
+        case 'length':
+            if(property_exists($body, 'fromLength')){
+                $fromLength = $body->fromLength;
+            }
+            if(property_exists($body, 'fromLengthSelect')){
+                $fromLengthSelect = $body->fromLengthSelect;
+            }
+            if(property_exists($body, 'toLengthSelect')){
+                $toLengthSelect = $body->toLengthSelect;
+            }
+
+            $result = convertLength($fromLength, $fromLengthSelect, $toLengthSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'angle':
+            if(property_exists($body, 'fromAngle')){
+                $fromAngle = $body->fromAngle;
+            }
+            if(property_exists($body, 'fromAngleSelect')){
+                $fromAngleSelect = $body->fromAngleSelect;
+            }
+            if(property_exists($body, 'toAngleSelect')){
+                $toAngleSelect = $body->toAngleSelect;
+            }
+
+            $result = convertAngle($fromAngle, $fromAngleSelect, $toAngleSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'area':
+            if(property_exists($body, 'fromArea')){
+                $fromArea = $body->fromArea;
+            }
+            if(property_exists($body, 'fromAreaSelect')){
+                $fromAreaSelect = $body->fromAreaSelect;
+            }
+            if(property_exists($body, 'toAreaSelect')){
+                $toAreaSelect = $body->toAreaSelect;
+            }
+
+            $result = convertArea($fromArea, $fromAreaSelect, $toAreaSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'mass':
+            if(property_exists($body, 'fromMass')){
+                $fromMass = $body->fromMass;
+            }
+            if(property_exists($body, 'fromMassSelect')){
+                $fromMassSelect = $body->fromMassSelect;
+            }
+            if(property_exists($body, 'toMassSelect')){
+                $toMassSelect = $body->toMassSelect;
+            }
+
+            $result = convertMass($fromMass, $fromMassSelect, $toMassSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'speed':
+            if(property_exists($body, 'fromSpeed')){
+                $fromSpeed = $body->fromSpeed;
+            }
+            if(property_exists($body, 'fromSpeedSelect')){
+                $fromSpeedSelect = $body->fromSpeedSelect;
+            }
+            if(property_exists($body, 'toSpeedSelect')){
+                $toSpeedSelect = $body->toSpeedSelect;
+            }
+
+            $result = convertSpeed($fromSpeed, $fromSpeedSelect, $toSpeedSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'temperature':
+            if(property_exists($body, 'fromTemperature')){
+                $fromTemperature = $body->fromTemperature;
+            }
+            if(property_exists($body, 'fromTemperatureSelect')){
+                $fromTemperatureSelect = $body->fromTemperatureSelect;
+            }
+            if(property_exists($body, 'toTemperatureSelect')){
+                $toTemperatureSelect = $body->toTemperatureSelect;
+            }
+
+            $result = convertTemperature($fromTemperature, $fromTemperatureSelect, $toTemperatureSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'time':
+            if(property_exists($body, 'fromTime')){
+                $fromTime = $body->fromTime;
+            }
+            if(property_exists($body, 'fromTimeSelect')){
+                $fromTimeSelect = $body->fromTimeSelect;
+            }
+            if(property_exists($body, 'toTimeSelect')){
+                $toTimeSelect = $body->toTimeSelect;
+            }
+
+            $result = convertTime($fromTime, $fromTimeSelect, $toTimeSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+
+        case 'volume':
+            if(property_exists($body, 'fromVolume')){
+                $fromVolume = $body->fromVolume;
+            }
+            if(property_exists($body, 'fromVolumeSelect')){
+                $fromVolumeSelect = $body->fromVolumeSelect;
+            }
+            if(property_exists($body, 'toVolumeSelect')){
+                $toVolumeSelect = $body->toVolumeSelect;
+            }
+
+            $result = convertVolume($fromVolume, $fromVolumeSelect, $toVolumeSelect);
+
+            $data = [
+                'response' => 'success',
+                'message' => 'Calcul réussi',
+                'data' => $result
+            ];
+            echo json_encode($data);
+            break;
+    
     }
 
     /** Envoi des données dans la BDD */
