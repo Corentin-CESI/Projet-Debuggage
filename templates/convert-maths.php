@@ -17,7 +17,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Conversion de litres en millilitres</legend>
                         <form action="" method="post" name="LtomL">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <label for="L" aria-hidden="true" hidden>Litres</label>
                                     <div class="input-group">
@@ -28,11 +28,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <label for="mL" aria-hidden="true" hidden>Millilitres</label>
                                     <div class="input-group">
                                         <input id="mL" name="mL" type="text" class="form-control" disabled>
@@ -52,7 +52,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Conversion de millilitres en litres</legend>
                         <form action="" method="post" name="LtomL">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <label for="mL" aria-hidden="true" hidden>Millilitres</label>
                                     <div class="input-group">
@@ -63,11 +63,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <label for="L" aria-hidden="true" hidden>Litres</label>
                                     <div class="input-group">
                                         <input id="L" name="L" type="text" class="form-control" disabled>
@@ -87,7 +87,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Longueur</legend>
                         <form action="" method="post" name="length">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromLength" name="fromLength" type="text" class="form-control" required>
@@ -100,11 +100,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toLength" name="toLength" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -126,7 +126,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Angle</legend>
                         <form action="" method="post" name="angle">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromAngle" name="fromAngle" type="text" class="form-control" required>
@@ -139,11 +139,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toAngle" name="toAngle" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -165,7 +165,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Aire</legend>
                         <form action="" method="post" name="area">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromArea" name="fromArea" type="text" class="form-control" required>
@@ -178,11 +178,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toArea" name="toArea" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -204,7 +204,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Masse</legend>
                         <form action="" method="post" name="mass">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromMass" name="fromMass" type="text" class="form-control" required>
@@ -217,11 +217,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toMass" name="toMass" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -243,7 +243,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Température</legend>
                         <form action="" method="post" name="temperature">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromTemperature" name="fromTemperature" type="text" class="form-control" required>
@@ -256,11 +256,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toTemperature" name="toTemperature" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -282,7 +282,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Temps</legend>
                         <form action="" method="post" name="time">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromTime" name="fromTime" type="text" class="form-control" required>
@@ -295,11 +295,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toTime" name="toTime" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -321,7 +321,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Vitesse</legend>
                         <form action="" method="post" name="speed">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromSpeed" name="fromSpeed" type="text" class="form-control" required>
@@ -334,11 +334,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toSpeed" name="toSpeed" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
@@ -360,7 +360,7 @@ template('header', array(
                     <fieldset class="col-11 mx-auto mt-4 pb-3 pt-3">
                         <legend>Volume</legend>
                         <form action="" method="post" name="volume">
-                            <div class="form-group row">
+                            <div class="form-group row position-relative">
                                 <div class="col-5">
                                     <div class="input-group">
                                         <input id="fromVolume" name="fromVolume" type="text" class="form-control" required>
@@ -373,11 +373,11 @@ template('header', array(
                                     </div>
                                 </div>
 
-                                <div class="d-inline-flex align-items-center col-2">
-                                    <span class="ver">équivaut à</span>
+                                <div class="d-inline-flex align-items-center col-1" style="max-height:fit-content">
+                                    <span class="ver fs-1 position-absolute top-0 start-50 translate-middle mt-3" style="padding-right:2em">↔</span>
                                 </div>
 
-                                <div class="col-5">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <input id="toVolume" name="toVolume" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
