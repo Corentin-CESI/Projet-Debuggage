@@ -35,8 +35,7 @@
     }
 
     /** Simple produit en croix */
-    function ruleOfThird($a = 1, $b = 1, $c = 1): array
-    {
+    function ruleOfThird($a = 1, $b = 1, $c = 1): array {
         return [
             'd' => ($b * $c)  / $a,
         ];
@@ -103,7 +102,7 @@
         }
     }
 
-    /**  */
+    /** Permet la conversion entre différente devise monétaire */
     function convertCurrency($fromCurrency, $fromCurrencySelect, $toCurrencySelect){
         /** Récupère toutes les possibilités de conversion dans la devise choisie */
         $url = 'https://open.er-api.com/v6/latest/' . $fromCurrencySelect;
@@ -137,20 +136,161 @@
     }
 
     // Conversion des millilitres en litres
-    function convertVolume($L = null, $mL = null){
-    if ($L === null) {
-        $L = $mL * 1000;
-        return [
-            'L' => $L,
-        ];
+    function convertLitre($L = null, $mL = null){
+        if ($L === null) {
+            $L = $mL * 1000;
+            return [
+                'L' => $L,
+            ];
+        }
+        if ($mL === null) {
+            $mL = $L / 1000;
+            return [
+                'mL' => $mL,
+            ];
+        }
     }
-    if ($mL === null) {
-        $mL = $L / 1000;
-        return [
-            'mL' => $mL,
-        ];
-    }
-}
 
-    
-    
+    /** Conversion des LONGUEURS */
+    function convertLength($fromLength, $fromLengthSelect, $toLengthSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/length.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromLengthSelect]['convert'][$toLengthSelect]['ratio'];
+
+        $toLength = $fromLength * $ratio;
+
+        return [
+            'toLength' => $toLength,
+        ];
+    }
+
+    /** Conversion des ANGLES */
+    function convertAngle($fromAngle, $fromAngleSelect, $toAngleSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/angle.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromAngleSelect]['convert'][$toAngleSelect]['ratio'];
+
+        $toAngle = $fromAngle * $ratio;
+
+        return [
+            'toAngle' => $toAngle,
+        ];
+    }
+
+    /** Conversion des AIRES */
+    function convertArea($fromArea, $fromAreaSelect, $toAreaSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/area.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromAreaSelect]['convert'][$toAreaSelect]['ratio'];
+
+        $toArea = $fromArea * $ratio;
+
+        return [
+            'toArea' => $toArea,
+        ];      
+    }
+
+    /** Conversion des MASSES */
+    function convertMass($fromMass, $fromMassSelect, $toMassSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/mass.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromMassSelect]['convert'][$toMassSelect]['ratio'];
+
+        $toMass = $fromMass * $ratio;
+
+        return [
+            'toMass' => $toMass,
+        ];        
+    }
+
+    /** Conversion des VITESSES */
+    function convertSpeed($fromSpeed, $fromSpeedSelect, $toSpeedSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/speed.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromSpeedSelect]['convert'][$toSpeedSelect]['ratio'];
+
+        $toSpeed = $fromSpeed * $ratio;
+
+        return [
+            'toSpeed' => $toSpeed,
+        ];        
+    }
+
+    /** Conversion des TEMPERATURES */
+    function convertTemperature($fromTemperature, $fromTemperatureSelect, $toTemperatureSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/temperature.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromTemperatureSelect]['convert'][$toTemperatureSelect]['ratio'];
+
+        $toTemperature = $fromTemperature * $ratio;
+
+        return [
+            'toTemperature' => $toTemperature,
+        ];        
+    }
+
+    /** Conversion des TEMPS */
+    function convertTime($fromTime, $fromTimeSelect, $toTimeSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/time.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromTimeSelect]['convert'][$toTimeSelect]['ratio'];
+
+        $toTime = $fromTime * $ratio;
+
+        return [
+            'toTime' => $toTime,
+        ];        
+    }
+
+    /** Conversion des VOLUMES */
+    function convertVolume($fromVolume, $fromVolumeSelect, $toVolumeSelect){
+        /** Récupère toutes les possibilités de conversion */
+        $url = './json/volume.json';
+
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+
+        /** Récupère le ratio de conversion */
+        $ratio = $data[$fromVolumeSelect]['convert'][$toVolumeSelect]['ratio'];
+
+        $toVolume = $fromVolume * $ratio;
+
+        return [
+            'toVolume' => $toVolume,
+        ];        
+    }

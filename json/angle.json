@@ -1,0 +1,52 @@
+{
+    "Radian" : {
+        "unit" : "rad",
+        "convert" : {
+            "Radian" : { "ratio" : "1" },
+            "Grad" : { "ratio" : "63.661977237" },
+            "Degree" : { "ratio" : "57.295779513" },
+            "Minute" : { "ratio" : "3437.7467708" },
+            "Second" : { "ratio" : "206264.80625" }
+        }
+    },
+    "Grad" : {
+        "unit" : "^g",
+        "convert" : {
+            "Radian" : { "ratio" : "0.0157079633" },
+            "Grad" : { "ratio" : "1" },
+            "Degree" : { "ratio" : "0.9" },
+            "Minute" : { "ratio" : "54" },
+            "Second" : { "ratio" : "3240" }
+        }
+    },
+    "Degree" : {
+        "unit" : "°",
+        "convert" : {
+            "Radian" : { "ratio" : "0.0174532925" },
+            "Grad" : { "ratio" : "1.1111111111" },
+            "Degree" : { "ratio" : "1" },
+            "Minute" : { "ratio" : "60" },
+            "Second" : { "ratio" : "3600" }
+        }
+    },
+    "Minute" : {
+        "unit" : "'",
+        "convert" : {
+            "Radian" : { "ratio" : "0.0002908882" },
+            "Grad" : { "ratio" : "0.0185185185" },
+            "Degree" : { "ratio" : "0.0166666667" },
+            "Minute" : { "ratio" : "1" },
+            "Second" : { "ratio" : "60" }
+        }
+    },
+    "Second" : {
+        "unit" : "\"",
+        "convert" : {
+            "Radian" : { "ratio" : "0.0000048481" },
+            "Grad" : { "ratio" : "0.000308642" },
+            "Degree" : { "ratio" : "0.0002777778" },
+            "Minute" : { "ratio" : "0.0166666667" },
+            "Second" : { "ratio" : "1" }
+        }
+    }
+}

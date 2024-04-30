@@ -1,0 +1,178 @@
+{
+    "Millennium" : {
+        "unit" : "millennium",
+        "convert" : {
+            "Millennium" : { "ratio" : "1" },
+            "Century" : { "ratio" : "10" },
+            "Year" : { "ratio" : "100" },
+            "Month" : { "ratio" : "12008.219178" },
+            "Week" : { "ratio" : "52178.571429" },
+            "Day" : { "ratio" : "365250" },
+            "Hour" : { "ratio" : "8766000" },
+            "Minute" : { "ratio" : "525960000" },
+            "Second" : { "ratio" : "31557600000" },
+            "Millisecond" : { "ratio" : "31557600000000" },
+            "Microsecond" : { "ratio" : "31557599999999904" }
+        }
+    },
+    "Century" : {
+        "unit" : "century",
+        "convert" : {
+            "Millennium" : { "ratio" : "0.1" },
+            "Century" : { "ratio" : "1" },
+            "Year" : { "ratio" : "100" },
+            "Month" : { "ratio" : "1200.8219178" },
+            "Week" : { "ratio" : "5217.8571429" },
+            "Day" : { "ratio" : "36525" },
+            "Hour" : { "ratio" : "876600" },
+            "Minute" : { "ratio" : "52596000" },
+            "Second" : { "ratio" : "3155760000" },
+            "Millisecond" : { "ratio" : "3155760000000" },
+            "Microsecond" : { "ratio" : "3155759999999991" }
+        }
+    },
+    "Year" : {
+        "unit" : "y",
+        "convert" : {
+            "Millennium" : { "ratio" : "0.001" },
+            "Century" : { "ratio" : "0.01" },
+            "Year" : { "ratio" : "1" },
+            "Month" : { "ratio" : "12.008219178" },
+            "Week" : { "ratio" : "52.178571429" },
+            "Day" : { "ratio" : "365.25" },
+            "Hour" : { "ratio" : "8766" },
+            "Minute" : { "ratio" : "525960" },
+            "Second" : { "ratio" : "31557600" },
+            "Millisecond" : { "ratio" : "31557600000" },
+            "Microsecond" : { "ratio" : "31557600000000" }
+        }
+    },
+    "Month" : {
+        "unit" : "m",
+        "convert" : {
+            "Millennium" : { "ratio" : "0.0000832763" },
+            "Century" : { "ratio" : "0.0008327629" },
+            "Year" : { "ratio" : "0.0832762948" },
+            "Month" : { "ratio" : "1" },
+            "Week" : { "ratio" : "4.3452380952" },
+            "Day" : { "ratio" : "30.416666667" },
+            "Hour" : { "ratio" : "730" },
+            "Minute" : { "ratio" : "43800" },
+            "Second" : { "ratio" : "2628000" },
+            "Millisecond" : { "ratio" : "2628000000" },
+            "Microsecond" : { "ratio" : "2628000000000" }
+        }
+    },
+    "Week" : {
+        "unit" : "w",
+        "convert" : {
+            "Millennium" : { "ratio" : "0.000019165" },
+            "Century" : { "ratio" : "0.0001916496" },
+            "Year" : { "ratio" : "0.0191649555" },
+            "Month" : { "ratio" : "0.2301369863" },
+            "Week" : { "ratio" : "1" },
+            "Day" : { "ratio" : "7" },
+            "Hour" : { "ratio" : "168" },
+            "Minute" : { "ratio" : "10080" },
+            "Second" : { "ratio" : "604800" },
+            "Millisecond" : { "ratio" : "604800000" },
+            "Microsecond" : { "ratio" : "604800000000" }
+        }
+    },
+    "Day" : {
+        "unit" : "d",
+        "convert" : {
+            "Millennium" : { "ratio" : "0.0000027379" },
+            "Century" : { "ratio" : "0.0000273785" },
+            "Year" : { "ratio" : "0.0027378508" },
+            "Month" : { "ratio" : "0.0328767123" },
+            "Week" : { "ratio" : "0.1428571429" },
+            "Day" : { "ratio" : "1" },
+            "Hour" : { "ratio" : "24" },
+            "Minute" : { "ratio" : "1440" },
+            "Second" : { "ratio" : "86400000" },
+            "Millisecond" : { "ratio" : "86400" },
+            "Microsecond" : { "ratio" : "86400000000" }
+        }
+    },
+    "Hour" : {
+        "unit" : "h",
+        "convert" : {
+            "Millennium" : { "ratio" : "1.140771161E-7" },
+            "Century" : { "ratio" : "0.0000011408" },
+            "Year" : { "ratio" : "0.0001140771" },
+            "Month" : { "ratio" : "0.001369863" },
+            "Week" : { "ratio" : "0.005952381" },
+            "Day" : { "ratio" : "0.0416666667" },
+            "Hour" : { "ratio" : "1" },
+            "Minute" : { "ratio" : "60" },
+            "Second" : { "ratio" : "3600" },
+            "Millisecond" : { "ratio" : "3600000" },
+            "Microsecond" : { "ratio" : "3600000000" }
+        }
+    },
+    "Minute" : {
+        "unit" : "min",
+        "convert" : {
+            "Millennium" : { "ratio" : "1.901285268E-9" },
+            "Century" : { "ratio" : "1.901285268E-8" },
+            "Year" : { "ratio" : "0.0000019013" },
+            "Month" : { "ratio" : "0.0000228311" },
+            "Week" : { "ratio" : "0.0000992063" },
+            "Day" : { "ratio" : "0.0006944444" },
+            "Hour" : { "ratio" : "0.0166666667" },
+            "Minute" : { "ratio" : "1" },
+            "Second" : { "ratio" : "60000" },
+            "Millisecond" : { "ratio" : "60" },
+            "Microsecond" : { "ratio" : "60000000" }
+        }
+    },
+    "Second" : {
+        "unit" : "s",
+        "convert" : {
+            "Millennium" : { "ratio" : "3.168808781E-11" },
+            "Century" : { "ratio" : "3.168808781E-10" },
+            "Year" : { "ratio" : "3.168808781E-8" },
+            "Month" : { "ratio" : "3.805175038E-7" },
+            "Week" : { "ratio" : "0.0000016534" },
+            "Day" : { "ratio" : "0.0000115741" },
+            "Hour" : { "ratio" : "0.0002777778" },
+            "Minute" : { "ratio" : "0.0166666667" },
+            "Second" : { "ratio" : "1" },
+            "Millisecond" : { "ratio" : "1000" },
+            "Microsecond" : { "ratio" : "1000000" }
+        }
+    },
+    "Millisecond" : {
+        "unit" : "ms",
+        "convert" : {
+            "Millennium" : { "ratio" : "3.168808781E-14" },
+            "Century" : { "ratio" : "3.168808781E-13" },
+            "Year" : { "ratio" : "3.168808781E-11" },
+            "Month" : { "ratio" : "3.805175038E-10" },
+            "Week" : { "ratio" : "1.653439153E-9" },
+            "Day" : { "ratio" : "1.157407407E-8" },
+            "Hour" : { "ratio" : "2.777777777E-7" },
+            "Minute" : { "ratio" : "0.0000166667" },
+            "Second" : { "ratio" : "0.001" },
+            "Millisecond" : { "ratio" : "1" },
+            "Microsecond" : { "ratio" : "1000" }
+        }
+    },
+    "Microsecond" : {
+        "unit" : "µs",
+        "convert" : {
+            "Millennium" : { "ratio" : "3.168808781E-17" },
+            "Century" : { "ratio" : "3.168808781E-16" },
+            "Year" : { "ratio" : "3.168808781E-14" },
+            "Month" : { "ratio" : "3.805175038E-13" },
+            "Week" : { "ratio" : "1.653439153E-12" },
+            "Day" : { "ratio" : "1.157407407E-11" },
+            "Hour" : { "ratio" : "2.777777777E-10" },
+            "Minute" : { "ratio" : "1.666666666E-8" },
+            "Second" : { "ratio" : "0.000001" },
+            "Millisecond" : { "ratio" : "0.001" },
+            "Microsecond" : { "ratio" : "1" }
+        }
+    }
+}

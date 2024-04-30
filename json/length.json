@@ -1,0 +1,185 @@
+{
+    "Kilometer" : {
+            "unit" : "km",
+            "convert" : {
+                "Kilometer" : { "ratio" : "1" },
+                "Hectometer" : { "ratio" : "10" },
+                "Dekameter" : { "ratio" : "100" },
+                "Meter" : { "ratio" : "1000" },
+                "Decimeter" : { "ratio" : "10000" },
+                "Centimeter" : { "ratio" : "100000" },
+                "Millimeter" : { "ratio" : "1000000" },
+                "Mile" : { "ratio" : "0.6213711922" },
+                "Yard" : { "ratio" : "1093.6132983" },
+                "Foot" : { "ratio" : "3280.839895" },
+                "Inch" : { "ratio" : "39370.07874" }
+            }
+        },
+    "Hectometer" : {
+            "unit" : "hm",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.1" },
+                "Hectometer" : { "ratio" : "1" },
+                "Dekameter" : { "ratio" : "10" },
+                "Meter" : { "ratio" : "100" },
+                "Decimeter" : { "ratio" : "1000" },
+                "Centimeter" : { "ratio" : "10000" },
+                "Millimeter" : { "ratio" : "100000" },
+                "Mile" : { "ratio" : "0.0621371192" },
+                "Yard" : { "ratio" : "109.36132983" },
+                "Foot" : { "ratio" : "328.0839895" },
+                "Inch" : { "ratio" : "3937.007874" }
+            }
+        },
+    "Dekameter" : {
+            "unit" : "dam",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.01" },
+                "Hectometer" : { "ratio" : "0.1" },
+                "Dekameter" : { "ratio" : "1" },
+                "Meter" : { "ratio" : "10" },
+                "Decimeter" : { "ratio" : "100" },
+                "Centimeter" : { "ratio" : "1000" },
+                "Millimeter" : { "ratio" : "10000" },
+                "Mile" : { "ratio" : "0.006213711922" },
+                "Yard" : { "ratio" : "10.936132983" },
+                "Foot" : { "ratio" : "32.80839895" },
+                "Inch" : { "ratio" : "393.7007874" }
+            }
+        },
+    "Meter" : {
+            "unit" : "m",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.001" },
+                "Hectometer" : { "ratio" : "0.01" },
+                "Dekameter" : { "ratio" : "0.1" },
+                "Meter" : { "ratio" : "1" },
+                "Decimeter" : { "ratio" : "10" },
+                "Centimeter" : { "ratio" : "100" },
+                "Millimeter" : { "ratio" : "1000" },
+                "Mile" : { "ratio" : "0.0006213711922" },
+                "Yard" : { "ratio" : "1.0936132983" },
+                "Foot" : { "ratio" : "3.280839895" },
+                "Inch" : { "ratio" : "39.37007874" }
+            }
+        },
+    "Decimeter" : {
+            "unit" : "dm",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.0001" },
+                "Hectometer" : { "ratio" : "0.001" },
+                "Dekameter" : { "ratio" : "0.01" },
+                "Meter" : { "ratio" : "0.1" },
+                "Decimeter" : { "ratio" : "1" },
+                "Centimeter" : { "ratio" : "10" },
+                "Millimeter" : { "ratio" : "100" },
+                "Mile" : { "ratio" : "0.0000621371" },
+                "Yard" : { "ratio" : "0.1093613298" },
+                "Foot" : { "ratio" : "0.3280839895" },
+                "Inch" : { "ratio" : "3.937007874" }
+            }
+        },
+    "Centimeter" : {
+            "unit" : "cm",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.00001" },
+                "Hectometer" : { "ratio" : "0.0001" },
+                "Dekameter" : { "ratio" : "0.001" },
+                "Meter" : { "ratio" : "0.01" },
+                "Decimeter" : { "ratio" : "0.1" },
+                "Centimeter" : { "ratio" : "1" },
+                "Millimeter" : { "ratio" : "10" },
+                "Mile" : { "ratio" : "0.0000062137" },
+                "Yard" : { "ratio" : "0.0109361329" },
+                "Foot" : { "ratio" : "0.0328083989" },
+                "Inch" : { "ratio" : "0.3937007874" }
+            }
+        },
+    "Millimeter" : {
+            "unit" : "mm",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.000001" },
+                "Hectometer" : { "ratio" : "0.00001" },
+                "Dekameter" : { "ratio" : "0.0001" },
+                "Meter" : { "ratio" : "0.001" },
+                "Decimeter" : { "ratio" : "0.01" },
+                "Centimeter" : { "ratio" : "0.1" },
+                "Millimeter" : { "ratio" : "1" },
+                "Mile" : { "ratio" : "0.0000006213" },
+                "Yard" : { "ratio" : "0.0010936132" },
+                "Foot" : { "ratio" : "0.0032808398" },
+                "Inch" : { "ratio" : "0.0393700787" }
+            }
+        },
+    "Mile" : {
+            "unit" : "mi",
+            "convert" : {
+                "Kilometer" : { "ratio" : "1.609344" },
+                "Hectometer" : { "ratio" : "16.09344" },
+                "Dekameter" : { "ratio" : "160.9344" },
+                "Meter" : { "ratio" : "1609.344" },
+                "Decimeter" : { "ratio" : "16093.44" },
+                "Centimeter" : { "ratio" : "160934.4" },
+                "Millimeter" : { "ratio" : "1609344" },
+                "Mile" : { "ratio" : "1" },
+                "Yard" : { "ratio" : "1760" },
+                "Foot" : { "ratio" : "5280" },
+                "Inch" : { "ratio" : "63360" }
+            }
+        },
+    "Yard" : {
+            "unit" : "yd",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.0009144" },
+                "Hectometer" : { "ratio" : "0.009144" },
+                "Dekameter" : { "ratio" : "0.09144" },
+                "Meter" : { "ratio" : "0.9144" },
+                "Decimeter" : { "ratio" : "9.144" },
+                "Centimeter" : { "ratio" : "91.44" },
+                "Millimeter" : { "ratio" : "914.4" },
+                "Mile" : { "ratio" : "0.0005681818" },
+                "Yard" : { "ratio" : "1" },
+                "Foot" : { "ratio" : "3" },
+                "Inch" : { "ratio" : "36" }
+            }
+        },
+    "Foot" : {
+            "unit" : "ft",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.0003048" },
+                "Hectometer" : { "ratio" : "0.003048" },
+                "Dekameter" : { "ratio" : "0.03048" },
+                "Meter" : { "ratio" : "0.3048" },
+                "Decimeter" : { "ratio" : "3.048" },
+                "Centimeter" : { "ratio" : "30.48" },
+                "Millimeter" : { "ratio" : "304.8" },
+                "Mile" : { "ratio" : "0.0001893939" },
+                "Yard" : { "ratio" : "0.3333333333" },
+                "Foot" : { "ratio" : "1" },
+                "Inch" : { "ratio" : "12" }
+            }
+        },
+    "Inch" : {
+            "unit" : "in",
+            "convert" : {
+                "Kilometer" : { "ratio" : "0.0000254" },
+                "Hectometer" : { "ratio" : "0.000254" },
+                "Dekameter" : { "ratio" : "0.00254" },
+                "Meter" : { "ratio" : "0.0254" },
+                "Decimeter" : { "ratio" : "0.254" },
+                "Centimeter" : { "ratio" : "2.54" },
+                "Millimeter" : { "ratio" : "25.4" },
+                "Mile" : { "ratio" : "0.0000157828" },
+                "Yard" : { "ratio" : "0.0277777778" },
+                "Foot" : { "ratio" : "0.0833333333" },
+                "Inch" : { "ratio" : "1" }
+            }
+        }
+}
+
+
+
+
+
+
+

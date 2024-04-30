@@ -1,0 +1,61 @@
+{
+    "Celsius" : {
+        "unit" : "°C",
+        "convert" : {
+            "Celsius" : { "ratio" : "1" },
+            "Kelvin" : { "ratio" : "274.15" },
+            "Fahrenheit" : { "ratio" : "33.8" },
+            "Rankine" : { "ratio" : "493.47" },
+            "Reaumur" : { "ratio" : "0.8" }
+        }
+    },
+    "Kelvin" : {
+        "unit" : "K",
+        "convert" : {
+            "convert" : {
+                "Celsius" : { "ratio" : "-272.15" },
+                "Kelvin" : { "ratio" : "1" },
+                "Fahrenheit" : { "ratio" : "-457.87" },
+                "Rankine" : { "ratio" : "1.8" },
+                "Reaumur" : { "ratio" : "-217.72" }
+            }
+        }
+    },
+    "Fahrenheit" : {
+        "unit" : "°F",
+        "convert" : {
+            "convert" : {
+                "Celsius" : { "ratio" : "-17.222222222" },
+                "Kelvin" : { "ratio" : "255.92777778" },
+                "Fahrenheit" : { "ratio" : "1" },
+                "Rankine" : { "ratio" : "460.67" },
+                "Reaumur" : { "ratio" : "-13.777777778" }
+            }
+        }
+    },
+    "Rankine" : {
+        "unit" : "°R",
+        "convert" : {
+            "convert" : {
+                "Celsius" : { "ratio" : "-272.59444444" },
+                "Kelvin" : { "ratio" : "0.5555555556" },
+                "Fahrenheit" : { "ratio" : "-458.67" },
+                "Rankine" : { "ratio" : "1" },
+                "Reaumur" : { "ratio" : "-218.07555556" }
+            }
+        }
+    },
+    "Reaumur" : {
+        "unit" : "°r",
+        "convert" : {
+            "convert" : {
+                "Celsius" : { "ratio" : "1.25" },
+                "Kelvin" : { "ratio" : "274.4" },
+                "Fahrenheit" : { "ratio" : "34.25" },
+                "Rankine" : { "ratio" : "493.92" },
+                "Reaumur" : { "ratio" : "1" }
+            }
+        }
+    }
+}
+

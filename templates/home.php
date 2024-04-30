@@ -72,11 +72,11 @@
                 <p>Transformer 1/4 de litres en millilitres ou encore convertir des euros en dollars n'a jamais été aussi simple !</p>
             </div>
 
-            <div class="section-title col-11 mx-auto">
+            <div class="section-title col-11 mx-auto" id="alert-none">
                 <?php getAlert($messages); ?>
             </div>
 
-            <div class="col-11 mx-auto">
+            <div class="col-11 mx-auto" id="form-none">
                 <div class="col-lg-12 pt-4 pt-lg-0 content">
                     <h3>Il vous manque une fonctionnalité ?</h3>
                     <p class="fst-italic">
@@ -129,7 +129,7 @@
             </div>
 
             <!-- Loading Spinner -->
-            <div id="loading" class="position-absolute top-50 start-50 translate-middle" style="max-width:fit-content; display: none;">
+            <div id="loading" class="position-absolute top-100 start-50 translate-middle" style="max-width:fit-content; display: none;">
                 <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
@@ -146,6 +146,8 @@
          * */
         document.getElementById('contact-form').addEventListener('submit', function() {
             document.getElementById('loading').style.display = 'block';
+            document.getElementById('form-none').style.display = 'none';
+            document.getElementById('alert-none').style.display = 'none';
         }); 
     </script>
 

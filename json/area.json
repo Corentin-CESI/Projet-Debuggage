@@ -1,0 +1,152 @@
+{
+    "Square Kilometer" : {
+        "unit" : "km²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "1000000" },
+            "Square Kilometer" : { "ratio" : "1" },
+            "Square Centimeter" : { "ratio" : "10000000000" },
+            "Square Millimeter" : { "ratio" : "1000000000000" },
+            "Hectare" : { "ratio" : "100" },
+            "Square Mile" : { "ratio" : "0.3861021585" },
+            "Square Yard" : { "ratio" : "1195990.0463" },
+            "Square Foot" : { "ratio" : "10763910.417" },
+            "Square Inch" : { "ratio" : "1550003100" },
+            "Acre" : { "ratio" : "247.10538147" }
+        }
+    },
+    "Square Meter" : {
+        "unit" : "m²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "1" },
+            "Square Kilometer" : { "ratio" : "0.000001" },
+            "Square Centimeter" : { "ratio" : "10000" },
+            "Square Millimeter" : { "ratio" : "1000000" },
+            "Hectare" : { "ratio" : "0.0001" },
+            "Square Mile" : { "ratio" : "3.861021585E-7" },
+            "Square Yard" : { "ratio" : "1.1959900463" },
+            "Square Foot" : { "ratio" : "10.763910417" },
+            "Square Inch" : { "ratio" : "1550.0031" },
+            "Acre" : { "ratio" : "0.0002471054" }
+        }
+    },
+    "Square Centimeter" : {
+        "unit" : "cm²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "0.0001" },
+            "Square Kilometer" : { "ratio" : "1.E-10" },
+            "Square Centimeter" : { "ratio" : "1" },
+            "Square Millimeter" : { "ratio" : "100" },
+            "Hectare" : { "ratio" : "1.E-8" },
+            "Square Mile" : { "ratio" : "3.861021585E-11" },
+            "Square Yard" : { "ratio" : "0.000119599" },
+            "Square Foot" : { "ratio" : "0.001076391" },
+            "Square Inch" : { "ratio" : "0.15500031" },
+            "Acre" : { "ratio" : "2.471053814E-8" }
+        }
+    },
+    "Square Millimeter" : {
+        "unit" : "mm²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "0.000001" },
+            "Square Kilometer" : { "ratio" : "1.E-12" },
+            "Square Centimeter" : { "ratio" : "0.01" },
+            "Square Millimeter" : { "ratio" : "1" },
+            "Hectare" : { "ratio" : "1.E-10" },
+            "Square Mile" : { "ratio" : "3.861021585E-13" },
+            "Square Yard" : { "ratio" : "0.000001196" },
+            "Square Foot" : { "ratio" : "0.0000107639" },
+            "Square Inch" : { "ratio" : "0.0015500031" },
+            "Acre" : { "ratio" : "2.471053814E-10" }
+        }
+    },
+    "Hectare" : {
+        "unit" : "ha",
+        "convert" : {
+            "Square Meter" : { "ratio" : "10000" },
+            "Square Kilometer" : { "ratio" : "0.01" },
+            "Square Centimeter" : { "ratio" : "100000000" },
+            "Square Millimeter" : { "ratio" : "10000000000" },
+            "Hectare" : { "ratio" : "1" },
+            "Square Mile" : { "ratio" : "0.0038610216" },
+            "Square Yard" : { "ratio" : "11959.900463" },
+            "Square Foot" : { "ratio" : "107639.10417" },
+            "Square Inch" : { "ratio" : "15500031" },
+            "Acre" : { "ratio" : "2.4710538147" }
+        }
+    },
+    "Square Mile" : {
+        "unit" : "mi²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "2589988.1103" },
+            "Square Kilometer" : { "ratio" : "2.5899881103" },
+            "Square Centimeter" : { "ratio" : "25899881103" },
+            "Square Millimeter" : { "ratio" : "2589988110336" },
+            "Hectare" : { "ratio" : "258.99881103" },
+            "Square Mile" : { "ratio" : "1" },
+            "Square Yard" : { "ratio" : "3097600" },
+            "Square Foot" : { "ratio" : "27878400" },
+            "Square Inch" : { "ratio" : "4014489600" },
+            "Acre" : { "ratio" : "640" }
+        }
+    },
+    "Square Yard" : {
+        "unit" : "yd²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "0.83612736" },
+            "Square Kilometer" : { "ratio" : "8.361273599E-7" },
+            "Square Centimeter" : { "ratio" : "8361.2736" },
+            "Square Millimeter" : { "ratio" : "836127.36" },
+            "Hectare" : { "ratio" : "0.0000836127" },
+            "Square Mile" : { "ratio" : "3.228305785E-7" },
+            "Square Yard" : { "ratio" : "1" },
+            "Square Foot" : { "ratio" : "9" },
+            "Square Inch" : { "ratio" : "1296" },
+            "Acre" : { "ratio" : "0.0002066116" }
+        }
+    },
+    "Square Foot" : {
+        "unit" : "ft²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "0.09290304" },
+            "Square Kilometer" : { "ratio" : "9.290303999E-8" },
+            "Square Centimeter" : { "ratio" : "929.0304" },
+            "Square Millimeter" : { "ratio" : "92903.04" },
+            "Hectare" : { "ratio" : "0.0000092903" },
+            "Square Mile" : { "ratio" : "3.587006427E-8" },
+            "Square Yard" : { "ratio" : "0.1111111111" },
+            "Square Foot" : { "ratio" : "1" },
+            "Square Inch" : { "ratio" : "144" },
+            "Acre" : { "ratio" : "0.0000229568" }
+        }
+    },
+    "Square Inch" : {
+        "unit" : "in²",
+        "convert" : {
+            "Square Meter" : { "ratio" : "0.00064516" },
+            "Square Kilometer" : { "ratio" : "6.4516E-10" },
+            "Square Centimeter" : { "ratio" : "6.4516" },
+            "Square Millimeter" : { "ratio" : "645.16" },
+            "Hectare" : { "ratio" : "6.4516E-8" },
+            "Square Mile" : { "ratio" : "2.490976686E-10" },
+            "Square Yard" : { "ratio" : "0.0007716049" },
+            "Square Foot" : { "ratio" : "0.0069444444" },
+            "Square Inch" : { "ratio" : "1" },
+            "Acre" : { "ratio" : "1.594225079E-7" }
+        }
+    },
+    "Acre" : {
+        "unit" : "ac",
+        "convert" : {
+            "Square Meter" : { "ratio" : "4046.8564224" },
+            "Square Kilometer" : { "ratio" : "0.0040468564" },
+            "Square Centimeter" : { "ratio" : "40468564.224" },
+            "Square Millimeter" : { "ratio" : "4046856422.4" },
+            "Hectare" : { "ratio" : "0.4046856422" },
+            "Square Mile" : { "ratio" : "0.0015625" },
+            "Square Yard" : { "ratio" : "4840" },
+            "Square Foot" : { "ratio" : "43560" },
+            "Square Inch" : { "ratio" : "6272640" },
+            "Acre" : { "ratio" : "1" }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+{
+    "Tonne" : {
+        "unit" : "t",
+        "convert" : {
+            "Tonne" : { "ratio" : "1" },
+            "Kilogram" : { "ratio" : "1000" },
+            "Hectogram" : { "ratio" : "10000" },
+            "Dekagram" : { "ratio" : "100000" },
+            "Gram" : { "ratio" : "1000000" },
+            "Decigram" : { "ratio" : "10000000" },
+            "Centigram" : { "ratio" : "100000000" },
+            "Milligram" : { "ratio" : "1000000000" },
+            "Pound" : { "ratio" : "2204.6226218" },
+            "Ounce" : { "ratio" : "35273.96195" },
+            "Carrat" : { "ratio" : "5000000" }
+        }
+    },
+    "Kilogram" : {
+        "unit" : "kg",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.001" },
+            "Kilogram" : { "ratio" : "1" },
+            "Hectogram" : { "ratio" : "10" },
+            "Dekagram" : { "ratio" : "100" },
+            "Gram" : { "ratio" : "1000" },
+            "Decigram" : { "ratio" : "10000" },
+            "Centigram" : { "ratio" : "100000" },
+            "Milligram" : { "ratio" : "1000000" },
+            "Pound" : { "ratio" : "2.2046226218" },
+            "Ounce" : { "ratio" : "35.27396195" },
+            "Carrat" : { "ratio" : "5000" }
+        }
+    },
+    "Hectogram" : {
+        "unit" : "hg",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.0001" },
+            "Kilogram" : { "ratio" : "0.1" },
+            "Hectogram" : { "ratio" : "1" },
+            "Dekagram" : { "ratio" : "10" },
+            "Gram" : { "ratio" : "100" },
+            "Decigram" : { "ratio" : "1000" },
+            "Centigram" : { "ratio" : "10000" },
+            "Milligram" : { "ratio" : "100000" },
+            "Pound" : { "ratio" : "0.2204622622" },
+            "Ounce" : { "ratio" : "3.527396195" },
+            "Carrat" : { "ratio" : "500" }
+        }
+    },
+    "Dekagram" : {
+        "unit" : "dag",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.00001" },
+            "Kilogram" : { "ratio" : "0.01" },
+            "Hectogram" : { "ratio" : "0.1" },
+            "Dekagram" : { "ratio" : "1" },
+            "Gram" : { "ratio" : "10" },
+            "Decigram" : { "ratio" : "100" },
+            "Centigram" : { "ratio" : "1000" },
+            "Milligram" : { "ratio" : "10000" },
+            "Pound" : { "ratio" : "0.0220462262" },
+            "Ounce" : { "ratio" : "0.3527396195" },
+            "Carrat" : { "ratio" : "50" }
+        }
+    },
+    "Gram" : {
+        "unit" : "g",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.000001" },
+            "Kilogram" : { "ratio" : "0.001" },
+            "Hectogram" : { "ratio" : "0.01" },
+            "Dekagram" : { "ratio" : "0.1" },
+            "Gram" : { "ratio" : "1" },
+            "Decigram" : { "ratio" : "10" },
+            "Centigram" : { "ratio" : "100" },
+            "Milligram" : { "ratio" : "1000" },
+            "Pound" : { "ratio" : "0.0022046226" },
+            "Ounce" : { "ratio" : "0.0352739619" },
+            "Carrat" : { "ratio" : "5" }
+        }
+    },
+    "Decigram" : {
+        "unit" : "dg",
+        "convert" : {
+            "Tonne" : { "ratio" : "1.E-7" },
+            "Kilogram" : { "ratio" : "0.0001" },
+            "Hectogram" : { "ratio" : "0.001" },
+            "Dekagram" : { "ratio" : "0.01" },
+            "Gram" : { "ratio" : "0.1" },
+            "Decigram" : { "ratio" : "1" },
+            "Centigram" : { "ratio" : "10" },
+            "Milligram" : { "ratio" : "100" },
+            "Pound" : { "ratio" : "0.0002204623" },
+            "Ounce" : { "ratio" : "0.0035273962" },
+            "Carrat" : { "ratio" : "0.5" }
+        }
+    },
+    "Centigram" : {
+        "unit" : "cg",
+        "convert" : {
+            "Tonne" : { "ratio" : "1.E-8" },
+            "Kilogram" : { "ratio" : "0.00001" },
+            "Hectogram" : { "ratio" : "0.0001" },
+            "Dekagram" : { "ratio" : "0.001" },
+            "Gram" : { "ratio" : "0.01" },
+            "Decigram" : { "ratio" : "0.1" },
+            "Centigram" : { "ratio" : "1" },
+            "Milligram" : { "ratio" : "10" },
+            "Pound" : { "ratio" : "0.0000220462" },
+            "Ounce" : { "ratio" : "0.0003527396" },
+            "Carrat" : { "ratio" : "0.05" }
+        }
+    },
+    "Milligram" : {
+        "unit" : "mg",
+        "convert" : {
+            "Tonne" : { "ratio" : "1.E-9" },
+            "Kilogram" : { "ratio" : "0.000001" },
+            "Hectogram" : { "ratio" : "0.00001" },
+            "Dekagram" : { "ratio" : "0.0001" },
+            "Gram" : { "ratio" : "0.001" },
+            "Decigram" : { "ratio" : "0.01" },
+            "Centigram" : { "ratio" : "0.1" },
+            "Milligram" : { "ratio" : "1" },
+            "Pound" : { "ratio" : "0.0000022046" },
+            "Ounce" : { "ratio" : "0.000035274" },
+            "Carrat" : { "ratio" : "0.005" }
+        }
+    },
+    "Pound" : {
+        "unit" : "lbs",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.0004535924" },
+            "Kilogram" : { "ratio" : "0.45359237" },
+            "Hectogram" : { "ratio" : "4.5359237" },
+            "Dekagram" : { "ratio" : "45.359237" },
+            "Gram" : { "ratio" : "453.59237" },
+            "Decigram" : { "ratio" : "4535.9237" },
+            "Centigram" : { "ratio" : "45359.237" },
+            "Milligram" : { "ratio" : "453592.37" },
+            "Pound" : { "ratio" : "1" },
+            "Ounce" : { "ratio" : "16" },
+            "Carrat" : { "ratio" : "2267.96185" }
+        }
+    },
+    "Ounce" : {
+        "unit" : "oz",
+        "convert" : {
+            "Tonne" : { "ratio" : "0.0000283495" },
+            "Kilogram" : { "ratio" : "0.0283495231" },
+            "Hectogram" : { "ratio" : "0.2834952313" },
+            "Dekagram" : { "ratio" : "2.8349523125" },
+            "Gram" : { "ratio" : "28.349523125" },
+            "Decigram" : { "ratio" : "283.49523125" },
+            "Centigram" : { "ratio" : "2834.9523125" },
+            "Milligram" : { "ratio" : "28349.523125" },
+            "Pound" : { "ratio" : "0.0625" },
+            "Ounce" : { "ratio" : "1" },
+            "Carrat" : { "ratio" : "141.74761563" }
+        }
+    },
+    "Carrat" : {
+        "unit" : "car - ct",
+        "convert" : {
+            "Tonne" : { "ratio" : "2.E-7" },
+            "Kilogram" : { "ratio" : "0.0002" },
+            "Hectogram" : { "ratio" : "0.002" },
+            "Dekagram" : { "ratio" : "0.02" },
+            "Gram" : { "ratio" : "0.2" },
+            "Decigram" : { "ratio" : "2" },
+            "Centigram" : { "ratio" : "20" },
+            "Milligram" : { "ratio" : "200" },
+            "Pound" : { "ratio" : "0.0004409245" },
+            "Ounce" : { "ratio" : "0.0070547924" },
+            "Carrat" : { "ratio" : "1" }
+        }
+    }
+}
+
