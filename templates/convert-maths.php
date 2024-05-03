@@ -171,7 +171,7 @@ template('header', array(
                                         <input id="fromArea" name="fromArea" type="text" class="form-control" required>
                                         <div class="input-group-append">
                                             <select id="fromAreaSelect" name="fromAreaSelect" class="form-control" required>
-                                                <option value="Square Meter" selected hidden>m²</option>
+                                                <option value="Square Meter" selected hidden>m² - Square Meter</option>
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
@@ -187,7 +187,7 @@ template('header', array(
                                         <input id="toArea" name="toArea" type="text" class="form-control" disabled>
                                         <div class="input-group-append">
                                             <select id="toAreaSelect" name="toAreaSelect" class="form-control" required>
-                                                <option value="Square Kilometer" selected hidden>km²</option>
+                                                <option value="Square Kilometer" selected hidden>km² - Square Kilometer</option>
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
