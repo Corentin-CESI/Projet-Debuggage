@@ -22,9 +22,13 @@
                                     <label for="fromCurrency" aria-hidden="true" hidden>Euros</label>
                                     <div class="input-group">
                                         <input id="fromCurrency" name="fromCurrency" type="text" class="form-control" required>
+                                        
                                         <div class="input-group-append">
                                             <select id="fromCurrencySelect" name="fromCurrencySelect" class="form-control" required>
-                                                <option selected hidden>USD</option>
+                                                <option selected hidden>
+                                                <!-- <img src='https://flagsapi.com/US/flat/64.png'> -->
+                                                    USD
+                                                </option>
                                                 <!-- Options de devises générées dynamiquement par JavaScript -->
                                             </select>
                                         </div>
@@ -93,6 +97,7 @@
                         
                         optionToCurrency.value = currency;
                         optionToCurrency.textContent = currency;
+                        
 
                         toCurrencySelect.appendChild(optionToCurrency);
 
